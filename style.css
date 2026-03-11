@@ -1,0 +1,291 @@
+:root {
+    --miku-green: #39C5BB;
+    --miku-pink: #FF6699;
+    --miku-black: #1A1A1A;
+    --pixel-font: 'DotGothic16', sans-serif;
+}
+
+body {
+    background-color: #0d1117;
+    color: white;
+    font-family: 'Orbitron', var(--pixel-font);
+    margin: 0;
+    overflow-x: hidden;
+}
+
+/* Miku 装饰条纹背景 */
+.miku-bg-stripes {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        rgba(57, 197, 187, 0.03) 0px,
+        rgba(57, 197, 187, 0.03) 2px,
+        transparent 2px,
+        transparent 10px
+    );
+    z-index: -1;
+}
+
+.miku-nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 50px;
+    background: var(--miku-green);
+    color: var(--miku-black);
+}
+
+.miku-nav a {
+    color: var(--miku-black);
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 20px;
+    border-bottom: 2px solid transparent;
+}
+
+.miku-nav a:hover { border-bottom: 2px solid var(--miku-pink); }
+
+.panel {
+    min-height: 80vh;
+    padding: 100px 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.miku-text {
+    font-size: 4rem;
+    color: var(--miku-green);
+    text-shadow: 4px 4px var(--miku-pink), 0 0 20px var(--miku-green);
+    text-align: center;
+}
+
+/* 游戏档案 9 格子布局 */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.game-item {
+    background: rgba(57, 197, 187, 0.1);
+    border: 2px solid var(--miku-green);
+    padding: 15px;
+    transition: transform 0.3s;
+}
+
+.game-item:hover {
+    transform: scale(1.05) rotate(1deg);
+    background: rgba(255, 102, 153, 0.1);
+    border-color: var(--miku-pink);
+}
+
+.game-img-todo {
+    height: 150px;
+    background: #000;
+    border: 1px dashed var(--miku-green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    color: var(--miku-green);
+}
+
+/* Cosplay 展示区 */
+.cosplay-placeholder {
+    width: 100%;
+    height: 500px;
+    border: 5px double var(--miku-pink);
+    background: rgba(255, 102, 153, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--pixel-font);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    border-left: 10px solid var(--miku-pink);
+    padding-left: 20px;
+    width: 100%;
+}
+
+/* 时间线主轴 */
+.timeline-container {
+    position: relative;
+    max-width: 900px;
+    margin: 50px auto;
+    padding-left: 20px;
+    border-left: 4px dashed var(--miku-green); /* 像素风格虚线 */
+}
+
+.mission-entry {
+    position: relative;
+    margin-bottom: 80px;
+    padding-left: 40px;
+}
+
+/* 时间轴上的小圆点 */
+.mission-entry::before {
+    content: "";
+    position: absolute;
+    left: -12px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: var(--miku-pink);
+    border: 3px solid var(--miku-green);
+    box-shadow: 0 0 10px var(--miku-green);
+}
+
+.timeline-date {
+    font-family: 'DotGothic16', sans-serif;
+    color: var(--miku-pink);
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* 任务内容块 - Q 弹感觉 */
+.mission-blob {
+    display: flex;
+    background: rgba(57, 197, 187, 0.05);
+    border: 3px solid var(--miku-green);
+    padding: 20px;
+    gap: 20px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Q 弹过度 */
+}
+
+.mission-blob:hover {
+    transform: translateX(10px) scale(1.02);
+    background: rgba(57, 197, 187, 0.15);
+    box-shadow: -10px 10px 0px var(--miku-pink);
+}
+
+.mission-visual img {
+    width: 250px;
+    height: auto;
+    border: 2px solid var(--miku-green);
+}
+
+.mission-info h3 {
+    margin-top: 0;
+    color: var(--miku-green);
+}
+
+/* 像素 OPEN 按钮 */
+.pixel-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background: var(--miku-green);
+    color: var(--miku-black);
+    text-decoration: none;
+    font-family: 'DotGothic16', sans-serif;
+    font-weight: bold;
+    border: 4px solid var(--miku-black);
+    box-shadow: 4px 4px 0px var(--miku-pink);
+    transition: 0.1s;
+    margin-top: 15px;
+}
+
+.pixel-btn:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--miku-pink);
+    background: var(--miku-pink);
+    color: white;
+}
+
+/* 3D 舞台容器 */
+.carousel-container {
+    perspective: 2000px; /* 强透视感 */
+    width: 100%;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* 旋转器 */
+.carousel {
+    width: 300px;
+    height: 450px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.15); /* Q弹感旋转 */
+}
+
+/* 每一张卡片 */
+.carousel-item {
+    position: absolute;
+    width: 300px;
+    height: 450px;
+    left: 0;
+    top: 0;
+    background: var(--miku-black);
+    border: 4px solid var(--miku-green);
+    border-radius: 20px;
+    cursor: pointer;
+    backface-visibility: hidden; /* 旋转到背面时隐藏，避免重叠 */
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-inner {
+    width: 90%;
+    height: 94%;
+    border: 2px dashed rgba(57, 197, 187, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--miku-green);
+    font-family: var(--pixel-font);
+}
+
+/* 高亮效果 */
+.carousel-item.active {
+    border-color: var(--miku-pink);
+    box-shadow: 0 0 40px var(--miku-pink);
+}
+
+/* HERE */
+
+/* 切换键样式 */
+.lang-switch {
+    display: inline-flex;
+    margin-left: 30px;
+    font-family: var(--pixel-font);
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.lang-switch span {
+    transition: color 0.3s;
+    color: rgba(26, 26, 26, 0.5); /* 未选中时半透明黑色 */
+}
+
+.lang-switch .active {
+    color: var(--miku-pink) !important; /* 选中时变粉色  */
+    text-shadow: 0 0 10px var(--miku-pink);
+}
+
+.lang-switch .separator {
+    margin: 0 5px;
+    cursor: default;
+}
+
+/* 核心逻辑：默认隐藏英文 */
+[lang="en"] {
+    display: none;
+}
+
+/* 当 body 带有 .lang-en 类时，隐藏中文，显示英文 */
+body.lang-en [lang="zh"] {
+    display: none;
+}
+
+body.lang-en [lang="en"] {
+    display: inline-block; /* 块级元素根据需要设为 block */
+}
