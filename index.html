@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiana Li | Miku Style Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="miku-bg-stripes"></div>
+
+    <header class="miku-nav">
+        <div class="logo">KIANA LI </div>
+        <nav>
+            <a href="#hero">HOME</a>
+            <a href="#projects">MISSIONS</a>
+            <a href="#games">GAMES</a>
+            <a href="#cosplay">INTERESTS</a>
+            <div class="lang-switch">
+                <span id="lang-zh" class="active" onclick="setLanguage('zh')">中</span>
+                <span class="separator">/</span>
+                <span id="lang-en" onclick="setLanguage('en')">ENG</span>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero" class="panel">
+        <div class="pixel-art-container" data-aos="zoom-in-up" data-aos-duration="1000">
+            <h1 class="miku-text"> 
+                <span lang="zh">欢迎来到我的世界</span>
+                <span lang="en">WELCOME TO MY WORLD</span>
+            </h1>
+            <p class="intro-text">SFU VISUAL COMPUTING @ 2028 | UBC MATH @ 2026 </p>
+            <div class="miku-placeholder-img">Pixel Miku Image Here</div>
+        </div>
+    </section>
+
+    <section id="projects" class="panel">
+        <h2 class="section-title" data-aos="fade-down">ACTIVE MISSIONS <small>// 任务时间轴</small></h2>
+        
+        <div class="timeline-container">
+            <div class="mission-entry" data-aos="fade-right">
+                <div class="timeline-date">JUL 2025</div>
+                <div class="mission-blob">
+                    <div class="mission-visual">
+                        <img src="https://via.placeholder.com/400x225?text=Melting+Gameplay+GIF" alt="Melting Gameplay">
+                    </div>
+                    <div class="mission-info">
+                        <h3>
+                            <span lang="zh">游戏制作项目-《融化》</span>
+                            <span lang="en">GAME_PROJECT: MELT DOWN</span>
+                        </h3>
+                        <p>
+                            <span lang="zh">在 Kenney Game Jam 中开发。实现基于物理动量的移动模型。</span>
+                            <span lang="en">Developed during Kenney Game Jam. Implemented physics-based momentum movement.</span>
+                        </p>
+                        <a href="https://papadapolas.itch.io/melt-down" class="pixel-btn">OPEN</a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="mission-entry" data-aos="fade-left">
+                <div class="timeline-date">SEP 2024</div>
+                <div class="mission-blob">
+                    <div class="mission-visual">
+                        <img src="https://via.placeholder.com/400x225?text=Astronomy+DB+UI" alt="Astronomy Database">
+                    </div>
+                    <div class="mission-info">
+                        <h3>DATABASE: 天文数据库 [cite: 49]</h3>
+                        <p>使用 Oracle DBMS 构建后端，管理 500+ 天体记录。 [cite: 49] 设计并实现了具备增删改查功能的交互式前端界面。 [cite: 49]</p>
+                        <a href="https://github.com/kiiiiwiii/Astronomy-Database-" class="pixel-btn">OPEN</a> [cite: 49]
+                    </div>
+                </div>
+            </div>
+    
+            <div class="mission-entry" data-aos="fade-right">
+                <div class="timeline-date">MAR 2024</div>
+                <div class="mission-blob">
+                    <div class="mission-visual">
+                        <img src="https://via.placeholder.com/400x225?text=Data+Analysis+Visual" alt="Heart Attack Analysis">
+                    </div>
+                    <div class="mission-info">
+                        <h3>ANALYSIS: 心脏病报告分析 [cite: 50]</h3>
+                        <p>利用 R 语言构建早期诊断预测模型。 [cite: 50] 通过参数调优，使模型的预测准确率达到 77%。 [cite: 50]</p>
+                        <a href="https://github.com/Jaboott/DSCI100-Project" class="pixel-btn">OPEN</a> [cite: 50]
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cosplay" class="panel">
+        <h2 class="section-title" data-aos="fade-up">COSPLAY_GALLERY <small>// 角色档案库</small></h2>
+        
+        <div class="carousel-container">
+            <div class="carousel" id="mikuCarousel">
+                <div class="carousel-item" onclick="rotateTo(0)"><div class="card-inner">[TODO: COS_01]</div></div>
+                <div class="carousel-item" onclick="rotateTo(1)"><div class="card-inner">[TODO: COS_02]</div></div>
+                <div class="carousel-item" onclick="rotateTo(2)"><div class="card-inner">[TODO: COS_03]</div></div>
+                <div class="carousel-item" onclick="rotateTo(3)"><div class="card-inner">[TODO: COS_04]</div></div>
+                <div class="carousel-item" onclick="rotateTo(4)"><div class="card-inner">[TODO: COS_05]</div></div>
+                <div class="carousel-item" onclick="rotateTo(5)"><div class="card-inner">[TODO: COS_06]</div></div>
+                <div class="carousel-item" onclick="rotateTo(6)"><div class="card-inner">[TODO: COS_07]</div></div>
+                <div class="carousel-item" onclick="rotateTo(7)"><div class="card-inner">[TODO: COS_08]</div></div>
+                <div class="carousel-item" onclick="rotateTo(8)"><div class="card-inner">[TODO: COS_09]</div></div>
+            </div>
+        </div>
+        <p class="cos-hint">MIKU TIP: 点击侧边露出的卡牌即可切换</p>
+    </section>
+    
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: 'ease-out-back', // Q 弹效果的核心：回弹缓冲
+        });
+    </script>
+
+
+<script>
+    const carousel = document.getElementById('mikuCarousel');
+    const items = document.querySelectorAll('.carousel-item');
+    const totalItems = items.length;
+    const theta = 360 / totalItems; // 每张卡片间隔 40 度
+    // 这里的 450 是根据卡片宽度手动微调的半径，确保前三张能看清
+    const radius = 500; 
+
+    // 初始化：将 9 张卡片沿着圆环排列
+    items.forEach((item, i) => {
+        item.style.transform = `rotateY(${i * theta}deg) translateZ(${radius}px)`;
+    });
+
+    let currIndex = 0;
+
+    function rotateTo(index) {
+        currIndex = index;
+        const angle = currIndex * -theta;
+        // 将整个容器反向旋转，并稍微向后退一点点，保证视觉平衡
+        carousel.style.transform = `translateZ(-${radius}px) rotateY(${angle}deg)`;
+        
+        // 更新高亮状态
+        items.forEach((item, i) => {
+            if(i === index) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        });
+    }
+
+    // 默认展示第一张
+    rotateTo(0);
+
+    function setLanguage(lang) {
+        const body = document.body;
+        const btnZh = document.getElementById('lang-zh');
+        const btnEn = document.getElementById('lang-en');
+
+        if (lang === 'en') {
+            body.classList.add('lang-en');
+            btnEn.classList.add('active');
+            btnZh.classList.remove('active');
+        } else {
+            body.classList.remove('lang-en');
+            btnZh.classList.add('active');
+            btnEn.classList.remove('active');
+        }
+    }
+</script>
+
+</body>
+</html>
