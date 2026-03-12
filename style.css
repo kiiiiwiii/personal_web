@@ -130,7 +130,8 @@ body {
 }
 
 .game-img-todo {
-    height: 150px;
+    height: 200px;
+    width: 300px;
     background: #000;
     border: 1px dashed var(--miku-green);
     display: flex;
@@ -138,6 +139,17 @@ body {
     justify-content: center;
     font-size: 0.8rem;
     color: var(--miku-green);
+    overflow: hidden;  /* 溢出隐藏 */
+    position: relative; /* 为内部图片提供参考 */
+   
+}
+
+.game-img-todo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* 覆盖整个容器，可能会裁剪 */
+    object-position: center; /* 居中显示裁剪区域 */
+    display: block;
 }
 
 /* Cosplay 展示区 */
@@ -158,6 +170,7 @@ body {
     padding-left: 20px;
     width: 100%;
 }
+
 
 /* 时间线主轴 */
 .timeline-container {
@@ -263,7 +276,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* 旋转器 */
@@ -357,7 +370,7 @@ body.lang-en [lang="en"] {
     align-items: center;
     justify-content: space-between;
     gap: 40px;
-    max-width: 1100px;
+    max-width: 2200px;
     width: 100%;
 }
 
@@ -378,7 +391,7 @@ body.lang-en [lang="en"] {
     background: var(--miku-pink);
     color: white;
     padding: 4px 12px;
-    font-size: 0.8rem;
+    font-size: 1.0rem;
     margin-right: 10px;
     clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
 }
@@ -613,7 +626,6 @@ body.lang-en [lang="en"] {
     }
 }
 
-
 /* 播放器整体布局 */
 .music-player-container {
     display: flex;
@@ -701,4 +713,212 @@ body.lang-en [lang="en"] {
 .track-name {
     color: var(--miku-green);
     letter-spacing: 2px;
+}
+
+
+/* ===== hero内教育样式 ===== */
+.hero-education {
+    margin: 30px 0 25px;
+    padding: 20px;
+    background: rgba(57, 197, 187, 0.05);
+    border-left: 5px solid var(--miku-pink);
+}
+
+.edu-summary {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+
+.edu-detail {
+    flex: 1;
+}
+
+.edu-detail strong {
+    display: block;
+    color: var(--miku-green);
+    font-size: 1.5rem;
+}
+
+.edu-detail span {
+    font-size: 1.0rem;
+    opacity: 0.8;
+}
+
+.edu-year {
+    color: var(--miku-pink);
+    font-family: var(--pixel-font);
+    padding: 5px 12px;
+    border: 2.5px dashed var(--miku-pink);
+    font-size: 1.2rem;
+}
+
+.edu-honors {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.honor-tag {
+    font-size: 1.0rem;
+    background: rgba(255, 102, 153, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.hero-skills {
+    margin-top: 24px;
+}
+
+.skills-category {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.mini-tag {
+    background: rgba(57, 197, 187, 0.1);
+    border: 1px solid var(--miku-green);
+    color: var(--miku-green);
+    padding: 3px 10px;
+    font-size: 1.2rem;
+    font-family: var(--pixel-font);
+}
+
+.more-skills {
+    margin-top: 10px;
+}
+
+.more-skills summary {
+    color: var(--miku-pink);
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.expanded {
+    margin-top: 10px;
+}
+
+/* ===== 独立教育面板样式 ===== */
+.edu-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.edu-university {
+    background: rgba(57, 197, 187, 0.05);
+    padding: 25px;
+    border: 2px solid var(--miku-green);
+}
+
+.uni-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.uni-icon {
+    font-size: 2rem;
+}
+
+.uni-header h3 {
+    color: var(--miku-green);
+    font-size: 1.3rem;
+}
+
+.uni-location {
+    color: var(--miku-pink);
+    font-size: 0.8rem;
+}
+
+.uni-meta {
+    display: flex;
+    gap: 20px;
+    padding: 15px 0;
+    border-bottom: 1px dashed var(--miku-green);
+    margin-bottom: 15px;
+}
+
+.uni-honors {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.honor-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.honor-text strong {
+    display: block;
+    color: var(--miku-green);
+}
+
+.skill-tree {
+    background: rgba(57, 197, 187, 0.05);
+    padding: 25px;
+    border: 2px solid var(--miku-pink);
+}
+
+.skill-tree h3 {
+    color: var(--miku-pink);
+    margin-bottom: 20px;
+}
+
+.skill-branches {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.skill-branch {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.branch-label {
+    color: var(--miku-green);
+    font-size: 0.9rem;
+    min-width: 100px;
+}
+
+.branch-tags {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-chip {
+    background: rgba(57, 197, 187, 0.1);
+    border: 1px solid var(--miku-green);
+    padding: 5px 12px;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .edu-showcase {
+        grid-template-columns: 1fr;
+    }
 }

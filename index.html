@@ -31,7 +31,7 @@
         <div class="disc-wrapper" id="musicBtn">
             <div class="vinyl-disc">
                 <div class="disc-cover-art">
-                    <img src="images/miku_disc_cover.png" alt="Disc Cover" id="discCover">
+                    <img src="images/disc.jpg" alt="Disc Cover" id="discCover">
                 </div>
                 <div class="disc-center-hole"></div>
             </div>
@@ -40,56 +40,113 @@
         
         <div class="player-info">
             <span class="status-text">STATUS: IDLE</span>
-            <span class="track-name">NOW PLAYING: TODO_SONG_NAME</span>
-        </div>
+            <span class="track-name">NOW PLAYING: ヨルシカ - だから僕は音楽を辞めた
 
-        <audio id="bgm" loop>
-            <source src="TODO_MUSIC_LINK" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
+            <audio id="bgm" loop>
+                <source src="music/music.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
     </div>
 
     <section id="hero" class="panel">
-        <div class="hero-container" data-aos="zoom-in-up" data-aos-duration="1000">
-            <div class="miku-glitch-box">
-                <h1 class="miku-text"> 
-                    <span lang="zh">你好，我是李璐</span>
-                    <span lang="en">Hi! I'M KIANA</span>
-                </h1>
-                <div class="identity-tags">
-                    <span class="tag">PASSION</span>
-                    <span class="tag">PATIENCE</span>
-                    <span class="tag">QUICK-LEARNER</span>
+    <div class="hero-container" data-aos="zoom-in-up" data-aos-duration="1000">
+        <div class="miku-glitch-box">
+            <h1 class="miku-text"> 
+                <span lang="zh">你好，我是李璐</span>
+                <span lang="en">Hi! I'M KIANA</span>
+            </h1>
+            <div class="identity-tags">
+                <span class="tag">PASSION</span>
+                <span class="tag">PATIENCE</span>
+                <span class="tag">QUICK-LEARNER</span>
+            </div>
+            
+            <div class="intro-bio">
+                <p lang="zh">
+                    我热衷于 <strong>Gameplay Programming</strong>，专注于构建能够塑造玩家体验的 <strong>交互式游戏系统</strong>。通过课程项目和个人实践，我积累了使用 <strong>C++</strong>、
+                    <strong>Unity</strong> 和 <strong>OpenGL</strong> 的开发经验, 主要负责实现游戏机制、系统原型开发, 以及解决将游戏创意转化为流畅互动体验的技术问题。
+                    在课余时间，我与朋友一起参加 <strong>Game Jam</strong> 开发 Unity 游戏项目，
+                    主要负责 <strong>游戏逻辑</strong>、玩法机制实现以及 <strong>快速原型开发</strong>。我非常享受不断迭代玩法设计、优化玩家与游戏世界互动体验的过程。目前我正在寻找 <strong>Gameplay Programmer</strong> 相关机会，
+                    希望能够参与开发 <strong>有趣</strong>、<strong>高完成度</strong>、并以 <strong>玩家体验</strong> 为核心的游戏作品。欢迎交流！
+                </p>
+                <p lang="en">
+                    I'm passionate about <strong>Gameplay Programming</strong> and building <strong>interactive game systems</strong> that shape the player experience. Through coursework and personal projects, 
+                    I've gained hands-on experience with <strong>C++</strong>, <strong>Unity</strong>, and <strong>OpenGL</strong>, focusing on implementing gameplay mechanics, prototyping systems, and solving 
+                    technical challenges that turn game ideas into responsive interactions. Gameplay programmers translate <strong>game design concepts</strong> into real mechanics and player behaviors, often 
+                    collaborating closely with <strong>designers</strong> and <strong>artists</strong> to build and refine gameplay systems. Outside of class, I collaborate with friends in <strong>game jams</strong> 
+                    to develop Unity-based games, where I work on <strong>gameplay logic</strong>, mechanics implementation, and <strong>rapid prototyping</strong>. I enjoy iterating on gameplay ideas and improving 
+                    how players interact with the game world. I'm actively seeking opportunities in <strong>Gameplay Programming</strong> where I can contribute to building <strong>engaging</strong>, 
+                    <strong>polished</strong>, and <strong>player-focused game experiences</strong>.Let's connect!
+                    
+                </p>
+            </div>
+
+             <!--
+            <div class="hero-stats">
+                <div class="stat-item"><span class="stat-label">EXP:</span> 3+ Projects</div>
+                <div class="stat-item"><span class="stat-label">LVL:</span> UBC MATH @ 2026</div>
+                <div class="stat-item"><span class="stat-label">CORE:</span> C / C++ / GLSL</div>
+            </div>
+            -->
+
+            <!-- ===== 新增：教育背景概要 ===== -->
+            <div class="hero-education">
+                <div class="edu-summary">
+                    <span class="edu-badge"></span>
+                    <div class="edu-detail">
+                        <strong>英属哥伦比亚大学</strong>
+                        <span>数学本科 · GPA 3.75/4.33</span>
+                    </div>
+                    <span class="edu-year">2022-2026</span>
                 </div>
-                
-                <div class="intro-bio">
-                    <p lang="zh">
-                        专注于<strong>底层图形编程</strong>与<strong>高性能玩法系统</strong>开发。 
-                        曾使用 C++ 和 OpenGL 从零构建引擎组件，在 TinyECS 架构下实现过复杂的 AI 寻路、程序化地图生成及物理反馈系统。
-                    </p>
-                    <p lang="en">
-                        Passionate <strong>Gameplay Programmer</strong> specializing in low-level graphics and 
-                        high-performance systems. Experienced in building game engines from scratch 
-                        using C++, OpenGL, and <strong>ECS patterns</strong>. Expert in implementing 
-                        procedural generation and physics-driven mechanics.
-                    </p>
-                </div>
-    
-                <div class="hero-stats">
-                    <div class="stat-item"><span class="stat-label">EXP:</span> 3+ Projects</div>
-                    <div class="stat-item"><span class="stat-label">LVL:</span> UBC MATH @ 2026</div>
-                    <div class="stat-item"><span class="stat-label">CORE:</span> C / C++ / GLSL</div>
+                <div class="edu-honors">
+                    <span class="honor-tag">特别表彰奖 (2年)</span>
+                    <span class="honor-tag">荣誉名单 (2年)</span>
                 </div>
             </div>
-    
-            <div class="miku-avatar-wrapper">
-                <div class="tenor-gif-embed" data-postid="86259844439666402" data-share-method="host" data-aspect-ratio="1" 
-                     data-width="100%"><a href="https://tenor.com/view/miku-point-show-hatsune-hatsune-miku-gif-86259844439666402">
-                     Miku Point Sticker</a></div> 
-                <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+
+            <!-- ===== 新增：技能标签 ===== -->
+            <div class="hero-skills">
+                <div class="skills-category">
+                    <div class="skill-tags">
+                        <span class="mini-tag">C/C++</span>
+                        <span class="mini-tag">Python</span>
+                        <span class="mini-tag">SQL</span>
+                        <span class="mini-tag">Java</span>
+                        <span class="mini-tag">git</span>
+                        <span class="mini-tag">Three.js</span>
+                        <span class="mini-tag">GLSL</span>
+                        <span class="mini-tag">GUI</span>
+                        <span class="mini-tag">Relational Algebra</span>
+                        <span class="mini-tag">Datalog</span>
+                        <span class="mini-tag">MATLAB</span>
+                        <span class="mini-tag">R</span>
+                        <span class="mini-tag">Power BI</span>
+                        <span class="mini-tag">Figma</span>
+                    </div>
+                </div>
+            
+                <details class="more-skills">
+                    <summary>+4 更多技能</summary>
+                    <div class="skill-tags expanded">
+                        <span class="mini-tag">Excel</span>
+                        <span class="mini-tag">PowerPoint</span>
+                        <span class="mini-tag">Word</span>
+                        <span class="mini-tag">Outlook</span>
+                    </div>
+                </details>
             </div>
         </div>
-    </section>
+
+        <div class="miku-avatar-wrapper">
+            <div class="tenor-gif-embed" data-postid="86259844439666402" data-share-method="host" data-aspect-ratio="1" 
+                 data-width="100%"><a href="https://tenor.com/view/miku-point-show-hatsune-hatsune-miku-gif-86259844439666402">
+                 Miku Point Sticker</a></div> 
+            <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        </div>
+    </div>
+</section>
 
     <section id="projects" class="panel">
         <h2 class="section-title" data-aos="fade-down">ACTIVE MISSIONS <small>// 任务时间轴</small></h2>
@@ -141,7 +198,7 @@
                         <h3>
                             ANALYSIS: 心脏病报告分析
                         </h3>
-                        <p>利用 R 语言构建早期诊断预测模型。 [cite: 50] 通过参数调优，使模型的预测准确率达到 77</p>
+                        <p>利用 R 语言构建早期诊断预测模型。通过参数调优，使模型的预测准确率达到 77</p>
                         <a href="https://github.com/Jaboott/DSCI100-Project" class="pixel-btn">OPEN</a>
                     </div>
                 </div>
@@ -154,21 +211,25 @@
     
     <div class="game-grid">
         <div class="game-item" data-aos="flip-left">
-            <div class="game-img-todo">LEVEL: TOP_SECRET</div>
+            <div class="game-img-todo">
+                <img src="images/yanyun.jpg" alt="yanyun">
+            </div>
             <div class="mission-info">
                 <h3>
                     <span lang="zh">燕云十六声</span>
                     <span lang="en">Where Winds Meet</span>
                 </h3>
                 <p>
-                    <span lang="zh">游戏时长 600h + 好像因为还不够长所以我试试</span>
+                    <span lang="zh">游戏时长 600h + </span>
                     <span lang="en">Played 600h +</span>
                 </p>
             </div>
         </div>
 
         <div class="game-item" data-aos="flip-left" data-aos-delay="100">
-            <div class="game-img-todo">STATUS: COMPLETED</div>
+            <div class="game-img-todo">
+                <img src="images/sf.jpg" alt="sf">
+            </div>
             <div class="mission-info">
                 <h3>
                     <span lang="zh">双影奇境</span>
@@ -182,7 +243,9 @@
         </div>
 
         <div class="game-item" data-aos="flip-left" data-aos-delay="200">
-            <div class="game-img-todo">CORE: ALGORITHM</div>
+            <div class="game-img-todo">
+                <img src="images/ln.jpg" alt="ln">
+            </div>
             <div class="mission-info">
                 <h3>
                     <span lang="zh">光与夜之恋</span>
@@ -195,7 +258,9 @@
         </div>
 
         <div class="game-item" data-aos="flip-left">
-            <div class="game-img-todo">TECH: ECS_PATTERN</div>
+            <div class="game-img-todo">
+                <img src="images/ld.jpg" alt="ld">
+            </div>
             <div class="mission-info">
                 <h3>
                     <span lang="zh">恋与深空</span>
@@ -209,7 +274,9 @@
         </div>
 
         <div class="game-item" data-aos="flip-left" data-aos-delay="100">
-            <div class="game-img-todo">FRAG: SHADER</div>
+            <div class="game-img-todo">
+                <img src="images/shijiezhiwai.jpeg" alt="shijiezhiwai">
+            </div>
             <div class="mission-info">
                 <h3>
                     <span lang="zh">世界之外</span>
@@ -223,7 +290,9 @@
         </div>
 
         <div class="game-item" data-aos="flip-left" data-aos-delay="200">
-            <div class="game-img-todo">EXP: ASWF_VFX</div>
+            <div class="game-img-todo">
+                <img src="images/valorant.jpg" alt="valorant">
+            </div>
             <div class="mission-info">
                 <h3>
                     <span lang="zh">无畏契约</span>
@@ -236,7 +305,9 @@
         </div>
 
         <div class="game-item" data-aos="flip-left">
-            <div class="game-img-todo">DATA: ORACLE</div>
+            <div class="game-img-todo">
+                <img src="images/p5r.jpg" alt="p5r">
+            </div>
             <div class="mission-info">
                 <h3>
                     <span lang="zh">女神异闻录 5: 皇家版</span>
@@ -250,7 +321,9 @@
         </div>
 
         <div class="game-item" data-aos="flip-left" data-aos-delay="100">
-            <div class="game-img-todo">ANALYSIS: R</div>
+            <div class="game-img-todo">
+                <img src="images/cod4.jpg" alt="cod4">
+            </div>
             <div class="mission-info">
                 <h3>
                     <span lang="zh">使命召唤 4</span>
@@ -264,7 +337,9 @@
         </div>
 
         <div class="game-item" data-aos="flip-left" data-aos-delay="200">
-            <div class="game-img-todo" style="border-style: dotted;">...LOADING...</div>
+            <div class="game-img-todo">
+                <img src="images/nikki.jpg" alt="nikki">
+            </div>
             <div class="mission-info">
                 <h3>
                     <span lang="zh">无限暖暖</span>
