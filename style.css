@@ -389,3 +389,69 @@ body.lang-en [lang="en"] {
         border-bottom: 4px solid var(--miku-pink);
     }
 }
+
+
+/* 图片在旋转卡片中的容器 */
+.cos-photo-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px; /* 匹配外层卡片的圆角 */
+}
+
+.cos-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 核心：确保图片铺满 300x450 的空间而不拉伸 */
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 悬停时的小动效 */
+.carousel-item:hover .cos-img {
+    transform: scale(1.1);
+}
+
+/* 图片下方的像素标签 */
+.cos-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--miku-pink);
+    color: white;
+    font-family: var(--pixel-font);
+    font-size: 0.9rem;
+    padding: 8px 0;
+    text-align: center;
+    z-index: 2;
+    clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+}
+
+/* 覆盖原有的 .card-inner 默认样式，让图片填满容器 */
+.carousel-item .card-inner {
+    border: none;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+/* 额外的科技感：扫描线动画 */
+.scanline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(57, 197, 187, 0.5);
+    opacity: 0.5;
+    z-index: 1;
+    pointer-events: none;
+    animation: scan 3s linear infinite;
+}
+
+@keyframes scan {
+    0% { top: 0; }
+    100% { top: 100%; }
+}
