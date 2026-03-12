@@ -86,11 +86,41 @@ body {
     margin-top: 50px;
 }
 
+
+/* 让文字在卡片中分布更均匀 */
 .game-item {
-    background: rgba(57, 197, 187, 0.1);
-    border: 2px solid var(--miku-green);
-    padding: 15px;
-    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    min-height: 320px; /* 统一高度 */
+    justify-content: flex-start;
+}
+
+.game-item .mission-info {
+    padding-top: 15px;
+}
+
+.game-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: var(--miku-green);
+}
+
+.game-item p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+/* 适配移动端：在手机上显示为 1 列或 2 列 */
+@media (max-width: 900px) {
+    .game-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .game-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .game-item:hover {
@@ -455,3 +485,4 @@ body.lang-en [lang="en"] {
     0% { top: 0; }
     100% { top: 100%; }
 }
+
