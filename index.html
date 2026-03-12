@@ -26,7 +26,28 @@
         </nav>
     </header>
 
-    
+    <div class="music-player-container">
+        
+        <div class="disc-wrapper" id="musicBtn">
+            <div class="vinyl-disc">
+                <div class="disc-cover-art">
+                    <img src="images/miku_disc_cover.png" alt="Disc Cover" id="discCover">
+                </div>
+                <div class="disc-center-hole"></div>
+            </div>
+            <div class="stylus"></div>
+        </div>
+        
+        <div class="player-info">
+            <span class="status-text">STATUS: IDLE</span>
+            <span class="track-name">NOW PLAYING: TODO_SONG_NAME</span>
+        </div>
+
+        <audio id="bgm" loop>
+            <source src="TODO_MUSIC_LINK" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
 
     <section id="hero" class="panel">
         <div class="hero-container" data-aos="zoom-in-up" data-aos-duration="1000">
@@ -419,6 +440,24 @@
             btnEn.classList.remove('active');
         }
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const musicBtn = document.getElementById('musicBtn');
+        const bgm = document.getElementById('bgm');
+        const statusText = document.querySelector('.status-text');
+
+        musicBtn.addEventListener('click', () => {
+            if (bgm.paused) {
+                bgm.play();
+                musicBtn.classList.add('playing');
+                statusText.innerText = 'STATUS: PLAYING';
+            } else {
+                bgm.pause();
+                musicBtn.classList.remove('playing');
+                statusText.innerText = 'STATUS: PAUSED';
+            }
+        });
+    });
 </script>
 
 
@@ -448,6 +487,8 @@
         </div>
     </div>
 </footer>
+
+
 
 </body>
 </html>

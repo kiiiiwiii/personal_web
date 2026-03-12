@@ -612,3 +612,93 @@ body.lang-en [lang="en"] {
         font-size: 1rem;
     }
 }
+
+
+/* 播放器整体布局 */
+.music-player-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+    font-family: var(--pixel-font);
+}
+
+/* 唱盘外层包装 */
+.disc-wrapper {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+/* 唱盘主体：黑色唱片质感 */
+.vinyl-disc {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #222 30%, #000 70%);
+    border-radius: 50%;
+    border: 4px solid #333;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5), 0 0 5px var(--miku-green);
+    transition: transform 0.5s ease;
+    /* 默认停止旋转 */
+    animation: rotateDisc 5s linear infinite;
+    animation-play-state: paused;
+}
+
+/* 唱盘封面图 */
+.disc-cover-art {
+    position: absolute;
+    top: 25%; left: 25%;
+    width: 50%; height: 50%;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.disc-cover-art img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+
+/* 唱盘中间的小孔 */
+.disc-center-hole {
+    position: absolute;
+    top: 45%; left: 45%;
+    width: 10%; height: 10%;
+    background: var(--bg-dark);
+    border-radius: 50%;
+    z-index: 3;
+    border: 2px solid #555;
+}
+
+/* 旋转动画 */
+@keyframes rotateDisc {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* 当激活播放时 */
+.disc-wrapper.playing .vinyl-disc {
+    animation-play-state: running;
+    box-shadow: 0 0 30px var(--miku-green);
+}
+
+/* 状态文字 */
+.player-info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.status-text {
+    display: block;
+    color: var(--miku-pink);
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+
+.track-name {
+    color: var(--miku-green);
+    letter-spacing: 2px;
+}
