@@ -1,16 +1,34 @@
 :root {
+    /* Dark Mode (默认) */
     --miku-green: #39C5BB;
     --miku-pink: #FF6699;
     --miku-black: #1A1A1A;
+    --bg-dark: #0d1117;
+    --panel-bg: rgba(20, 25, 35, 0.8);
+    --text-main: #ffffff;
+    --nav-bg: var(--miku-green);
+    --card-bg: rgba(57, 197, 187, 0.1);
     --pixel-font: 'DotGothic16', sans-serif;
 }
 
+/* 自动侦测系统 Light Mode */
+@media (prefers-color-scheme: light) {
+    :root {
+        --bg-dark: #f0f5f5;      /* 浅灰蓝色背景，比纯白更有质感 */
+        --text-main: #1a1a1a;    /* 深色文字 */
+        --panel-bg: rgba(255, 255, 255, 0.9);
+        --card-bg: rgba(57, 197, 187, 0.05);
+        --miku-black: #ffffff;   /* 亮色模式下的反转色 */
+        --nav-bg: #ffffff;       /* 导航栏变白 */
+    }
+}
+
 body {
-    background-color: #0d1117;
-    color: white;
+    background-color: var(--bg-dark);
+    color: var(--text-main);
     font-family: 'Orbitron', var(--pixel-font);
     margin: 0;
-    overflow-x: hidden;
+    transition: background-color 0.5s, color 0.5s; /* 切换时平滑过度 */
 }
 
 /* Miku 装饰条纹背景 */
@@ -46,7 +64,7 @@ body {
 .miku-nav a:hover { border-bottom: 2px solid var(--miku-pink); }
 
 .panel {
-    min-height: 80vh;
+    min-height: auto;
     padding: 100px 10%;
     display: flex;
     flex-direction: column;
@@ -68,11 +86,41 @@ body {
     margin-top: 50px;
 }
 
+
+/* 让文字在卡片中分布更均匀 */
 .game-item {
-    background: rgba(57, 197, 187, 0.1);
-    border: 2px solid var(--miku-green);
-    padding: 15px;
-    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    min-height: 320px; /* 统一高度 */
+    justify-content: flex-start;
+}
+
+.game-item .mission-info {
+    padding-top: 15px;
+}
+
+.game-item h3 {
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: var(--miku-green);
+}
+
+.game-item p {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+/* 适配移动端：在手机上显示为 1 列或 2 列 */
+@media (max-width: 900px) {
+    .game-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 600px) {
+    .game-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .game-item:hover {
@@ -82,7 +130,8 @@ body {
 }
 
 .game-img-todo {
-    height: 150px;
+    height: 250px;
+    width: 350px;
     background: #000;
     border: 1px dashed var(--miku-green);
     display: flex;
@@ -90,6 +139,17 @@ body {
     justify-content: center;
     font-size: 0.8rem;
     color: var(--miku-green);
+    overflow: hidden;  /* 溢出隐藏 */
+    position: relative; /* 为内部图片提供参考 */
+   
+}
+
+.game-img-todo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* 覆盖整个容器，可能会裁剪 */
+    object-position: center; /* 居中显示裁剪区域 */
+    display: block;
 }
 
 /* Cosplay 展示区 */
@@ -110,6 +170,7 @@ body {
     padding-left: 20px;
     width: 100%;
 }
+
 
 /* 时间线主轴 */
 .timeline-container {
@@ -162,10 +223,22 @@ body {
     box-shadow: -10px 10px 0px var(--miku-pink);
 }
 
+/* 确保时间轴图片容器有明确的尺寸 */
+.mission-visual {
+    width: 100%;       /* 占满父容器宽度 */
+    height: 200px;     /* 必须给一个高度，或者设为 auto */
+    overflow: hidden;  /* 溢出隐藏 */
+    border: 1px solid var(--miku-green); /* 边框线，方便 Debug 确认位置 */
+    margin-bottom: 15px;
+    background: rgba(0, 0, 0, 0.3); /* 图片加载前的底色 */
+}
+
+/* 确保图片自适应填充，不拉伸 */
 .mission-visual img {
-    width: 250px;
-    height: auto;
-    border: 2px solid var(--miku-green);
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 关键：裁剪图片以填满 200px 高度，不留白也不变形 */
+    display: block;
 }
 
 .mission-info h3 {
@@ -203,7 +276,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* 旋转器 */
@@ -288,4 +361,565 @@ body.lang-en [lang="zh"] {
 
 body.lang-en [lang="en"] {
     display: inline-block; /* 块级元素根据需要设为 block */
+}
+
+
+/* Hero 布局优化 */
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 2200px;
+    width: 100%;
+}
+
+.miku-glitch-box {
+    flex: 1;
+    text-align: left;
+    background: rgba(57, 197, 187, 0.05);
+    padding: 30px;
+    border-right: 4px solid var(--miku-pink);
+    position: relative;
+}
+
+.identity-tags {
+    margin: 10px 0 20px 0;
+}
+
+.tag {
+    background: var(--miku-pink);
+    color: white;
+    padding: 4px 12px;
+    font-size: 1.0rem;
+    margin-right: 10px;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+}
+
+.intro-bio {
+    /*
+    font-family: var(--pixel-font);*/
+    line-height: 1.6;
+    font-size: 1.1rem;
+    margin: 20px 0;
+    color: var(--text-main);
+}
+
+.intro-bio strong {
+    color: var(--miku-green);
+    border-bottom: 2px solid var(--miku-green);
+}
+
+.hero-stats {
+    display: flex;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.stat-item {
+    font-size: 0.9rem;
+    border: 1px solid var(--miku-green);
+    padding: 5px 15px;
+    color: var(--miku-green);
+}
+
+.stat-label {
+    color: var(--miku-pink);
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+.miku-avatar-wrapper {
+    width: 300px;
+    filter: drop-shadow(0 0 15px var(--miku-green));
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .miku-glitch-box {
+        border-right: none;
+        border-bottom: 4px solid var(--miku-pink);
+    }
+}
+
+
+/* 图片在旋转卡片中的容器 */
+.cos-photo-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px; /* 匹配外层卡片的圆角 */
+}
+
+.cos-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* 核心：确保图片铺满 300x450 的空间而不拉伸 */
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* 悬停时的小动效 */
+.carousel-item:hover .cos-img {
+    transform: scale(1.1);
+}
+
+/* 图片下方的像素标签 */
+.cos-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: var(--miku-pink);
+    color: white;
+    font-family: var(--pixel-font);
+    font-size: 0.9rem;
+    padding: 8px 0;
+    text-align: center;
+    z-index: 2;
+    clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
+}
+
+/* 覆盖原有的 .card-inner 默认样式，让图片填满容器 */
+.carousel-item .card-inner {
+    border: none;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+/* 额外的科技感：扫描线动画 */
+.scanline {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: rgba(57, 197, 187, 0.5);
+    opacity: 0.5;
+    z-index: 1;
+    pointer-events: none;
+    animation: scan 3s linear infinite;
+}
+
+@keyframes scan {
+    0% { top: 0; }
+    100% { top: 100%; }
+}
+
+/* --- Miku Style Footer --- */
+.miku-footer {
+    background: var(--bg-dark);
+    padding: 80px 0 40px;
+    border-top: 4px solid var(--miku-green);
+    position: relative;
+    color: var(--text-main);
+    /*font-family: var(--pixel-font);*/
+    text-align: center;
+    overflow: hidden;
+}
+
+/* 装饰性背景：扫描线效果 */
+.miku-footer::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(rgba(57, 197, 187, 0.03) 1px, transparent 1px);
+    background-size: 100% 4px;
+    pointer-events: none;
+}
+
+.footer-glitch-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    color: var(--miku-green);
+    margin-bottom: 40px;
+    letter-spacing: 4px;
+    text-shadow: 2px 2px var(--miku-pink);
+}
+
+.footer-socials {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.social-item {
+    text-decoration: none;
+    color: var(--text-main);
+    border: 1px solid var(--miku-green);
+    padding: 12px 25px;
+    font-size: 0.9rem;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    background: rgba(57, 197, 187, 0.05);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-icon {
+    font-weight: bold;
+    color: var(--miku-pink);
+    border-right: 1px solid var(--miku-green);
+    padding-right: 10px;
+}
+
+.social-item:hover {
+    background: var(--miku-green);
+    color: var(--miku-black);
+    box-shadow: 0 0 20px var(--miku-green);
+    transform: translateY(-5px);
+}
+
+.social-item:hover .social-icon {
+    color: var(--miku-black);
+    border-right-color: var(--miku-black);
+}
+
+.footer-contact {
+    margin-bottom: 60px;
+}
+
+.contact-label {
+    color: var(--miku-pink);
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+.email-address {
+    color: var(--text-main);
+    font-size: 1.4rem;
+    text-decoration: none;
+    border-bottom: 2px dashed var(--miku-green);
+    padding-bottom: 5px;
+    transition: all 0.3s;
+}
+
+.email-address:hover {
+    color: var(--miku-green);
+    border-bottom-style: solid;
+    text-shadow: 0 0 10px var(--miku-green);
+}
+
+.footer-bottom {
+    font-size: 0.7rem;
+    opacity: 0.4;
+    margin-top: 40px;
+    letter-spacing: 1px;
+}
+
+/* 适配移动端 */
+@media (max-width: 600px) {
+    .social-item {
+        width: 80%;
+        justify-content: center;
+    }
+    .email-address {
+        font-size: 1rem;
+    }
+}
+
+/* 播放器整体布局 */
+.music-player-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+    font-family: var(--pixel-font);
+}
+
+/* 唱盘外层包装 */
+.disc-wrapper {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+/* 唱盘主体：黑色唱片质感 */
+.vinyl-disc {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, #222 30%, #000 70%);
+    border-radius: 50%;
+    border: 4px solid #333;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5), 0 0 5px var(--miku-green);
+    transition: transform 0.5s ease;
+    /* 默认停止旋转 */
+    animation: rotateDisc 5s linear infinite;
+    animation-play-state: paused;
+}
+
+/* 唱盘封面图 */
+.disc-cover-art {
+    position: absolute;
+    top: 25%; left: 25%;
+    width: 50%; height: 50%;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.disc-cover-art img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+}
+
+/* 唱盘中间的小孔 */
+.disc-center-hole {
+    position: absolute;
+    top: 45%; left: 45%;
+    width: 10%; height: 10%;
+    background: var(--bg-dark);
+    border-radius: 50%;
+    z-index: 3;
+    border: 2px solid #555;
+}
+
+/* 旋转动画 */
+@keyframes rotateDisc {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* 当激活播放时 */
+.disc-wrapper.playing .vinyl-disc {
+    animation-play-state: running;
+    box-shadow: 0 0 30px var(--miku-green);
+}
+
+/* 状态文字 */
+.player-info {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.status-text {
+    display: block;
+    color: var(--miku-pink);
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+
+.track-name {
+    color: var(--miku-green);
+    letter-spacing: 2px;
+}
+
+
+/* ===== hero内教育样式 ===== */
+.hero-education {
+    margin: 30px 0 25px;
+    padding: 20px;
+    background: rgba(57, 197, 187, 0.05);
+    border-left: 5px solid var(--miku-pink);
+}
+
+.edu-summary {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+
+.edu-detail {
+    flex: 1;
+}
+
+.edu-detail strong {
+    display: block;
+    color: var(--miku-green);
+    font-size: 1.5rem;
+}
+
+.edu-detail span {
+    font-size: 1.0rem;
+    opacity: 0.8;
+}
+
+.edu-year {
+    color: var(--miku-pink);
+    /*font-family: var(--pixel-font);*/
+    padding: 5px 12px;
+    border: 2.5px dashed var(--miku-pink);
+    font-size: 1.2rem;
+}
+
+.edu-honors {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.honor-tag {
+    font-size: 1.0rem;
+    background: rgba(255, 102, 153, 0.1);
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+.hero-skills {
+    margin-top: 24px;
+}
+
+.skills-category {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.mini-tag {
+    background: rgba(57, 197, 187, 0.1);
+    border: 1px solid var(--miku-green);
+    color: var(--miku-green);
+    padding: 3px 10px;
+    font-size: 1.2rem;
+    /*font-family: var(--pixel-font);*/
+}
+
+.more-skills {
+    margin-top: 10px;
+}
+
+.more-skills summary {
+    color: var(--miku-pink);
+    cursor: pointer;
+    font-size: 1.0rem;
+}
+
+.expanded {
+    margin-top: 10px;
+}
+
+/* ===== 独立教育面板样式 ===== */
+.edu-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.edu-university {
+    background: rgba(57, 197, 187, 0.05);
+    padding: 25px;
+    border: 2px solid var(--miku-green);
+}
+
+.uni-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.uni-icon {
+    font-size: 2rem;
+}
+
+.uni-header h3 {
+    color: var(--miku-green);
+    font-size: 1.3rem;
+}
+
+.uni-location {
+    color: var(--miku-pink);
+    font-size: 0.8rem;
+}
+
+.uni-meta {
+    display: flex;
+    gap: 20px;
+    padding: 15px 0;
+    border-bottom: 1px dashed var(--miku-green);
+    margin-bottom: 15px;
+}
+
+.uni-honors {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.honor-item {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.honor-text strong {
+    display: block;
+    color: var(--miku-green);
+}
+
+.skill-tree {
+    background: rgba(57, 197, 187, 0.05);
+    padding: 25px;
+    border: 2px solid var(--miku-pink);
+}
+
+.skill-tree h3 {
+    color: var(--miku-pink);
+    margin-bottom: 20px;
+}
+
+.skill-branches {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.skill-branch {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.branch-label {
+    color: var(--miku-green);
+    font-size: 0.9rem;
+    min-width: 100px;
+}
+
+.branch-tags {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-chip {
+    background: rgba(57, 197, 187, 0.1);
+    border: 1px solid var(--miku-green);
+    padding: 5px 12px;
+    font-size: 0.8rem;
+}
+
+@media (max-width: 768px) {
+    .edu-showcase {
+        grid-template-columns: 1fr;
+    }
 }

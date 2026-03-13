@@ -26,37 +26,237 @@
         </nav>
     </header>
 
-    <section id="hero" class="panel">
-        <div class="pixel-art-container" data-aos="zoom-in-up" data-aos-duration="1000">
-            <h1 class="miku-text"> 
-                <span lang="zh">欢迎来到我的世界</span>
-                <span lang="en">WELCOME TO MY WORLD</span>
-            </h1>
-            <p class="intro-text">SFU VISUAL COMPUTING @ 2028 | UBC MATH @ 2026 </p>
-            <div class="miku-placeholder-img">Pixel Miku Image Here</div>
+    <div class="music-player-container">
+        
+        <div class="disc-wrapper" id="musicBtn">
+            <div class="vinyl-disc">
+                <div class="disc-cover-art">
+                    <img src="images/disc.jpg" alt="Disc Cover" id="discCover">
+                </div>
+                <div class="disc-center-hole"></div>
+            </div>
+            <div class="stylus"></div>
         </div>
-    </section>
+        
+        <div class="player-info">
+            <span class="status-text">STATUS: IDLE</span>
+            <span class="track-name">NOW PLAYING: ヨルシカ - だから僕は音楽を辞めた
+
+            <audio id="bgm" loop>
+                <source src="music/music.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+
+    <section id="hero" class="panel">
+    <div class="hero-container" data-aos="zoom-in-up" data-aos-duration="1000">
+        <div class="miku-glitch-box">
+            <h1 class="miku-text"> 
+                <span lang="zh">你好，我是李璐</span>
+                <span lang="en">Hi! I'M KIANA</span>
+            </h1>
+            <div class="identity-tags">
+                <span class="tag">PASSION</span>
+                <span class="tag">PATIENCE</span>
+                <span class="tag">QUICK-LEARNER</span>
+            </div>
+            
+            <div class="intro-bio">
+                <span lang="zh">
+                    我热衷于 <strong>Gameplay Programming</strong>，专注于构建能够塑造玩家体验的 <strong>交互式游戏系统</strong>。通过课程项目和个人实践，我积累了使用 <strong>C++</strong>、
+                    <strong>Unity</strong> 和 <strong>OpenGL</strong> 的开发经验, 主要负责实现游戏机制、系统原型开发, 以及解决将游戏创意转化为流畅互动体验的技术问题。
+                    在课余时间，我与朋友一起参加 <strong>Game Jam</strong> 开发 Unity 游戏项目，
+                    主要负责 <strong>游戏逻辑</strong>、玩法机制实现以及 <strong>快速原型开发</strong>。我非常享受不断迭代玩法设计、优化玩家与游戏世界互动体验的过程。目前我正在寻找 <strong>Gameplay Programmer</strong> 相关机会，
+                    希望能够参与开发 <strong>有趣</strong>、<strong>高完成度</strong>、并以 <strong>玩家体验</strong> 为核心的游戏作品。欢迎交流！
+                </span>
+                <p lang="en">
+                    I'm passionate about <strong>Gameplay Programming</strong> and building <strong>interactive game systems</strong> that shape the player experience. Through coursework and personal projects, 
+                    I've gained hands-on experience with <strong>C++</strong>, <strong>Unity</strong>, and <strong>OpenGL</strong>, focusing on implementing gameplay mechanics, prototyping systems, and solving 
+                    technical challenges that turn game ideas into responsive interactions. Gameplay programmers translate <strong>game design concepts</strong> into real mechanics and player behaviors, often 
+                    collaborating closely with <strong>designers</strong> and <strong>artists</strong> to build and refine gameplay systems. 
+                </p>
+                <br>
+                <p lang="en">
+                    Outside of class, I collaborate with friends in <strong>game jams</strong> 
+                    to develop Unity-based games, where I work on <strong>gameplay logic</strong>, mechanics implementation, and <strong>rapid prototyping</strong>. I enjoy iterating on gameplay ideas and improving 
+                    how players interact with the game world. I'm actively seeking opportunities in <strong>Gameplay Programming</strong> where I can contribute to building <strong>engaging</strong>, 
+                    <strong>polished</strong>, and <strong>player-focused game experiences</strong>. 
+                    
+                </p> 
+                
+                <br>
+                <p lang="en">Let's connect!</p>
+                    
+
+            </div>
+
+             <!--
+            <div class="hero-stats">
+                <div class="stat-item"><span class="stat-label">EXP:</span> 3+ Projects</div>
+                <div class="stat-item"><span class="stat-label">LVL:</span> UBC MATH @ 2026</div>
+                <div class="stat-item"><span class="stat-label">CORE:</span> C / C++ / GLSL</div>
+            </div>
+            -->
+
+            <!-- ===== 新增：教育背景概要 ===== -->
+            <div class="hero-education">
+                <div class="edu-summary">
+                    <span class="edu-badge"></span>
+                    <div class="edu-detail">
+                        <p lang="zh">
+                            <strong>英属哥伦比亚大学</strong>
+                            <span>数学本科 · GPA 3.75/4.33</span>
+                        </p>
+                        <p lang="en">
+                            <strong>University of British Columbia</strong>
+                            <span>Bachelor of Science, Mathematics · GPA 3.75/4.33</span>
+                        </p>
+                    </div>
+                    <span class="edu-year">2022 - 2026</span>
+                </div>
+                <div class="edu-honors">
+                    <p lang="zh">
+                        <span class="honor-tag">日语交流部特别表彰奖 ( 2 年 )</span>
+                        <span class="honor-tag">学院荣誉名单 ( 2 年 )</span>
+                    </p>
+                    <p lang="en">
+                        <span class="honor-tag">Japanese Language Table Special Awards ( 2 years )</span>
+                        <span class="honor-tag">Dean's List ( 2 years )</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- ===== 新增：技能标签 ===== -->
+            <div class="hero-skills">
+                <div class="skills-category">
+                    <div class="skill-tags">
+                        <span class="mini-tag">C/C++</span>
+                        <span class="mini-tag">GLSL</span>
+                        <span class="mini-tag">Three.js</span>
+                        <span class="mini-tag">Python</span>
+                        <span class="mini-tag">SQL</span>
+                        <span class="mini-tag">Java</span>
+                        <span class="mini-tag">git</span>
+                        <span class="mini-tag">GUI</span>
+                        <span class="mini-tag">Relational Algebra</span>
+                        <span class="mini-tag">Datalog</span>
+                        <span class="mini-tag">MATLAB</span>
+                        <span class="mini-tag">R</span>
+                        <span class="mini-tag">Power BI</span>
+                        <span class="mini-tag">Figma</span>
+                    </div>
+                </div>
+            
+                <details class="more-skills">
+                    <summary>+ 4 More Skills</summary>
+                    <div class="skill-tags expanded">
+                        <span class="mini-tag">Excel</span>
+                        <span class="mini-tag">PowerPoint</span>
+                        <span class="mini-tag">Word</span>
+                        <span class="mini-tag">Outlook</span>
+                        <span class="mini-tag">Mandarin</span>
+                        <span class="mini-tag">Japanese ( N2 )</span>
+                    </div>
+                </details>
+
+                <details class="more-skills">
+                    <summary>Languages</summary>
+                    <div class="skill-tags expanded">
+                        <span class="mini-tag">Mandarin</span>
+                        <span class="mini-tag">Japanese</span>
+                    </div>
+                </details>
+            </div>
+        </div>
+
+        <div class="miku-avatar-wrapper">
+            <div class="tenor-gif-embed" data-postid="86259844439666402" data-share-method="host" data-aspect-ratio="1" 
+                 data-width="100%"><a href="https://tenor.com/view/miku-point-show-hatsune-hatsune-miku-gif-86259844439666402">
+                 Miku Point Sticker</a></div> 
+            <script type="text/javascript" async src="https://tenor.com/embed.js"></script>
+        </div>
+    </div>
+</section>
 
     <section id="projects" class="panel">
-        <h2 class="section-title" data-aos="fade-down">ACTIVE MISSIONS <small>// 任务时间轴</small></h2>
-        
+        <h2 class="section-title" data-aos="fade-down">
+            <span lang="zh">
+                COMPLETED MISSIONS <small>// 任务时间轴</small>
+            </span>
+            <span lang="en">
+                COMPLETED MISSIONS <small>// mission timeline</small>
+            </span>
+        </h2>
+
         <div class="timeline-container">
             <div class="mission-entry" data-aos="fade-right">
                 <div class="timeline-date">JUL 2025</div>
                 <div class="mission-blob">
                     <div class="mission-visual">
-                        <img src="https://via.placeholder.com/400x225?text=Melting+Gameplay+GIF" alt="Melting Gameplay">
+                        <img src="images/game_jam.png" alt="Melting Gameplay">
                     </div>
                     <div class="mission-info">
                         <h3>
-                            <span lang="zh">游戏制作项目-《融化》</span>
+                            <span lang="zh">游戏制作项目 -《融化》</span>
                             <span lang="en">GAME_PROJECT: MELT DOWN</span>
                         </h3>
                         <p>
-                            <span lang="zh">在 Kenney Game Jam 中开发。实现基于物理动量的移动模型。</span>
-                            <span lang="en">Developed during Kenney Game Jam. Implemented physics-based momentum movement.</span>
+                            <p>
+                                <span lang="zh">
+                                    项目简介：出于对游戏开发的兴趣,与队友在课外时间报名参与Game Jam, 
+                                    并基于 2025届 “能量” 的主题，使用 Unity , C# 开发了一款游戏。
+                                </span>
+
+                                <span lang="en">A 48-hour Game Jam project based on 2025 theme "Energy".</span>
+                            </p>
+
+                                <span lang="zh">
+                                    <ul>
+                                        <li>
+                                            在 48 小时的 Game Jam 中，我们以讽刺资本逐利为核心设计理念，从零打造了一款让玩家作为 “打工人” 驾
+                                            驶太阳能喷火船，一边躲避环保组织的拼命阻击，一边为公司疯狂融化冰山得到报酬的游戏。
+                                        </li>
+
+                                        <li>
+                                            在团队中，我负责玩家移动系统、敌人生成、战斗交互与碰撞检测等关键功能的实现，确保游戏的可玩性。
+                                        </li>
+
+                                        <li>
+                                            
+                                            通过计算鼠标指向向量等，实现基于物理动量的玩家移动模型，使飞船的移动既可控又具惯性特征。结合粒子
+                                            系统等，构成玩家的火焰喷射攻击系统。基于 NavMesh 的自动寻路、目标追踪，建立敌人生成与追踪系统。
+                                            参与玩家生命值、敌人波次控制等参数的设计。
+                                        </li>
+                                        
+                                    </ul>
+                                </span>
+
+                                <span lang="en">
+                                    <ul>
+                                        <li>
+                                            Developed a satirical game from scratch in a 48-hour Game Jam, focusing on corporate greed, 
+                                            players act as "corporate drones" piloting solar-powered flamethrower boats to melt icebergs 
+                                            for profit while evading environmental activists.
+                                        </li>
+
+                                        <li>
+                                            Engineered core gameplay systems, including player movement, enemy spawning, 
+                                            combat interactions, and collision detection to ensure high playability under tight deadlines.
+                                        </li>
+
+                                        <li>
+                                            Implemented a physics-based player movement model using mouse-aimed vectors to balance 
+                                            precise control with realistic inertia. Developed an automated enemy tracking system 
+                                            using **NavMesh** and integrated particle systems for the flamethrower mechanics. 
+                                            Collaborated on balancing player health and enemy wave scaling.
+                                        </li>
+                                        
+                                    </ul>
+                                </span>
+                            
                         </p>
-                        <a href="https://papadapolas.itch.io/melt-down" class="pixel-btn">OPEN</a>
+                        <a href="https://papadapolas.itch.io/melt-down" class="pixel-btn">TRY IT</a>
                     </div>
                 </div>
             </div>
@@ -64,13 +264,53 @@
             <div class="mission-entry" data-aos="fade-left">
                 <div class="timeline-date">SEP 2024</div>
                 <div class="mission-blob">
-                    <div class="mission-visual">
-                        <img src="https://via.placeholder.com/400x225?text=Astronomy+DB+UI" alt="Astronomy Database">
-                    </div>
+                   
                     <div class="mission-info">
-                        <h3>DATABASE: 天文数据库 [cite: 49]</h3>
-                        <p>使用 Oracle DBMS 构建后端，管理 500+ 天体记录。 [cite: 49] 设计并实现了具备增删改查功能的交互式前端界面。 [cite: 49]</p>
-                        <a href="https://github.com/kiiiiwiii/Astronomy-Database-" class="pixel-btn">OPEN</a> [cite: 49]
+                        <h3>
+                            <span lang="zh">天文数据库</span>
+                            <span lang="en">DATABASE</span>
+                        </h3>
+
+                        <p>
+                             <p>
+                                <span lang="zh">
+                                    项目简介：在课程中，与团队合作设计了一个包含 500 条以上天体记录的数据库，用来帮助用户直观地管理天体数据
+                                </span>
+
+                                <span lang="en">
+                                    Collaborated with a team to design and implement a celestial database containing 
+                                    over 500 astronomical records, providing users with an intuitive interface for managing 
+                                    celestial data.
+                                </span>
+                            </p>
+
+                            <span lang="zh">
+                                <ul>
+                                    <li>
+                                        与团队合作设计 ER 图, 使用 Oracle DBMS 构建 SQL 驱动后端数据库, 并通过 JavaScript (Node.js)、HTML 和 CSS 开发交互式前端界面。
+                                    </li>
+
+                                     <li>
+                                        参与前端 UX 设计，开发了直观的管理页面，包括表单输入、数据表格展示以及交互式搜索功能，用户可在网页界面执行对数据库的增、
+                                         删、更新和连接查询操作，查看和搜索数据库内容。使数据库操作流程更易用，从而降低数据库的使用门槛。
+                                    </li>
+                                </ul>
+                            </span>
+
+                            <span lang="en"> 
+                                <ul>
+                                    <li>
+                                        Co-designed the ER Diagram and architected a SQL-driven backend using Oracle DBMS. Developed a responsive front-end interface using Node.js, HTML, and CSS to facilitate seamless data interaction.
+                                    </li>
+
+                                    <li>
+                                        Led front-end UX design and developed intuitive management pages featuring dynamic forms, data tables, and advanced search functionality. Enabled users to perform full CRUD operations (Create, Read, Update, Delete) and complex join queries via a web interface, significantly lowering the technical barrier for database management.
+                                    </li>
+                                </ul>
+                            </span>
+
+                        </p>
+                        <a href="https://github.com/kiiiiwiii/Astronomy-Database-" class="pixel-btn">OPEN</a>
                     </div>
                 </div>
             </div>
@@ -78,36 +318,325 @@
             <div class="mission-entry" data-aos="fade-right">
                 <div class="timeline-date">MAR 2024</div>
                 <div class="mission-blob">
-                    <div class="mission-visual">
-                        <img src="https://via.placeholder.com/400x225?text=Data+Analysis+Visual" alt="Heart Attack Analysis">
-                    </div>
+                    
                     <div class="mission-info">
-                        <h3>ANALYSIS: 心脏病报告分析 [cite: 50]</h3>
-                        <p>利用 R 语言构建早期诊断预测模型。 [cite: 50] 通过参数调优，使模型的预测准确率达到 77%。 [cite: 50]</p>
-                        <a href="https://github.com/Jaboott/DSCI100-Project" class="pixel-btn">OPEN</a> [cite: 50]
+                        <h3>
+                            <span lang="zh">心脏病发作报告分析</span>
+                            <span lang="en">Heart Diseases Analysis</span>
+                        </h3>
+
+                        <p>
+                             <p>
+                                <span lang="zh">
+                                    项目简介：在课程中，与团队合作开发了一个用于协助心脏病的早期诊断的预测模型
+                                </span>
+
+                                <span lang="en">Collaborated with a team to develop a predictive model designed to assist in the early diagnosis of heart disease.</span>
+                            </p>
+
+                            <span lang="zh">
+                                <ul>
+                                    <li>
+                                        与队友深入研究医学文献以筛选出关键的风险预测特征，并通过细致的参数调优和交叉验证来优化 R 
+                                        语言模型的性能，成功使模型达到了 77 % 的准确率、75 % 的召回率和 75 % 的精确率。
+                                    </li>
+
+                                     
+                                </ul>
+                            </span>
+
+                            <span lang="en"> 
+                                <ul>
+                                    <li>
+                                        Conducted in-depth research of medical literature to identify and select key risk-predictive features. Optimized the performance of an R-based model
+                                         through meticulous hyperparameter tuning and cross-validation, achieving an accuracy of 77%, a recall of 75%, and a precision of 75%.
+                                    </li>
+                                    
+                                </ul>
+                            </span>
+
+                        </p>
+                        <a href="https://github.com/Jaboott/DSCI100-Project" class="pixel-btn">OPEN</a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="cosplay" class="panel">
-        <h2 class="section-title" data-aos="fade-up">COSPLAY_GALLERY <small>// 角色档案库</small></h2>
-        
-        <div class="carousel-container">
-            <div class="carousel" id="mikuCarousel">
-                <div class="carousel-item" onclick="rotateTo(0)"><div class="card-inner">[TODO: COS_01]</div></div>
-                <div class="carousel-item" onclick="rotateTo(1)"><div class="card-inner">[TODO: COS_02]</div></div>
-                <div class="carousel-item" onclick="rotateTo(2)"><div class="card-inner">[TODO: COS_03]</div></div>
-                <div class="carousel-item" onclick="rotateTo(3)"><div class="card-inner">[TODO: COS_04]</div></div>
-                <div class="carousel-item" onclick="rotateTo(4)"><div class="card-inner">[TODO: COS_05]</div></div>
-                <div class="carousel-item" onclick="rotateTo(5)"><div class="card-inner">[TODO: COS_06]</div></div>
-                <div class="carousel-item" onclick="rotateTo(6)"><div class="card-inner">[TODO: COS_07]</div></div>
-                <div class="carousel-item" onclick="rotateTo(7)"><div class="card-inner">[TODO: COS_08]</div></div>
-                <div class="carousel-item" onclick="rotateTo(8)"><div class="card-inner">[TODO: COS_09]</div></div>
+    <section id="games" class="panel">
+    
+
+    <h2 class="section-title" data-aos="fade-right">
+        <span lang="zh">
+            GAME_ARCHIVE <small>// 游戏档案库</small>
+        </span>
+
+        <span lang="en">
+            GAME_ARCHIVE <small>// collections</small>
+        </span>
+    </h2>
+    
+    <div class="game-grid">
+        <div class="game-item" data-aos="flip-left">
+            <div class="game-img-todo">
+                <img src="images/yanyun.jpg" alt="yanyun">
+            </div>
+            <div class="mission-info">
+                <h3>
+                    <span lang="zh">燕云十六声</span>
+                    <span lang="en">Where Winds Meet</span>
+                </h3>
+                <p>
+                    <span lang="zh">游戏时长 600h + </span>
+                    <span lang="en">Played 600h +</span>
+                </p>
             </div>
         </div>
-        <p class="cos-hint">MIKU TIP: 点击侧边露出的卡牌即可切换</p>
+
+        <div class="game-item" data-aos="flip-left" data-aos-delay="100">
+            <div class="game-img-todo">
+                <img src="images/sf.jpg" alt="sf">
+            </div>
+            <div class="mission-info">
+                <h3>
+                    <span lang="zh">双影奇境</span>
+                    <span lang="en">Split Fiction</span>
+                </h3>
+                <p>
+                    <span lang="zh">游戏时长 16h +</span>
+                    <span lang="en">Played 16h +</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="game-item" data-aos="flip-left" data-aos-delay="200">
+            <div class="game-img-todo">
+                <img src="images/ln.jpg" alt="ln">
+            </div>
+            <div class="mission-info">
+                <h3>
+                    <span lang="zh">光与夜之恋</span>
+                    <span lang="en">Light and Night Love</span>
+                </h3>
+                <p>
+                    <span lang="zh">游戏时长 600h +</span>
+                    <span lang="en">Played 600h +</span>
+            </div>
+        </div>
+
+        <div class="game-item" data-aos="flip-left">
+            <div class="game-img-todo">
+                <img src="images/ld.jpg" alt="ld">
+            </div>
+            <div class="mission-info">
+                <h3>
+                    <span lang="zh">恋与深空</span>
+                    <span lang="en">Love and Deepspace</span>
+                </h3>
+                <p>
+                    <span lang="zh">游戏时长 200h +</span>
+                    <span lang="en">Played 200h +</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="game-item" data-aos="flip-left" data-aos-delay="100">
+            <div class="game-img-todo">
+                <img src="images/shijiezhiwai.jpeg" alt="shijiezhiwai">
+            </div>
+            <div class="mission-info">
+                <h3>
+                    <span lang="zh">世界之外</span>
+                    <span lang="en">Shi Jie Zhi Wai</span>
+                </h3>
+                <p>
+                    <span lang="zh">游戏时长 80h +</span>
+                    <span lang="en">Played 80h +</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="game-item" data-aos="flip-left" data-aos-delay="200">
+            <div class="game-img-todo">
+                <img src="images/valorant.jpg" alt="valorant">
+            </div>
+            <div class="mission-info">
+                <h3>
+                    <span lang="zh">无畏契约</span>
+                    <span lang="en">Valorant</span>
+                </h3>
+                <p>
+                    <span lang="zh">游戏时长 20h +</span>
+                    <span lang="en">Played 20h +</span></p>
+            </div>
+        </div>
+
+        <div class="game-item" data-aos="flip-left">
+            <div class="game-img-todo">
+                <img src="images/p5r.jpg" alt="p5r">
+            </div>
+            <div class="mission-info">
+                <h3>
+                    <span lang="zh">女神异闻录 5: 皇家版</span>
+                    <span lang="en">Persona 5 Royal</span>
+                </h3>
+                <p>
+                    <span lang="zh">游戏时长 30h +</span>
+                    <span lang="en">Played 30h +</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="game-item" data-aos="flip-left" data-aos-delay="100">
+            <div class="game-img-todo">
+                <img src="images/cod4.jpg" alt="cod4">
+            </div>
+            <div class="mission-info">
+                <h3>
+                    <span lang="zh">使命召唤 4</span>
+                    <span lang="en">Call of Duty 4</span>
+                </h3>
+                <p>
+                    <span lang="zh">游戏时长 16h +</span>
+                    <span lang="en">Played 16h +</span>
+                </p>
+            </div>
+        </div>
+
+        <div class="game-item" data-aos="flip-left" data-aos-delay="200">
+            <div class="game-img-todo">
+                <img src="images/nikki.jpg" alt="nikki">
+            </div>
+            <div class="mission-info">
+                <h3>
+                    <span lang="zh">无限暖暖</span>
+                    <span lang="en">Infinity Nikki</span>
+                </h3>
+                <p>
+                    <span lang="zh">游戏时长 16h +</span>
+                    <span lang="en">Played 20h +</span>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <section id="cosplay" class="panel">
+        <h2 class="section-title" data-aos="fade-up">
+            <span lang="zh">
+                COSPLAY_GALLERY <small>// 角色档案库</small>
+            </span>
+            <span lang="en">
+                COSPLAY_GALLERY <small>// character collections</small>
+            </span>
+        </h2>
+        <div class="carousel-container">
+            <div class="carousel" id="mikuCarousel">
+                <div class="carousel-item" onclick="rotateTo(0)">
+                    <div class="card-inner">
+                        <div class="cos-photo-wrapper">
+                            <img src="images/keegan.jpg" alt="Cosplay Keegan" class="cos-img">
+                            <div class="cos-label">FILE: KEEGAN_01</div>
+                            <div class="scanline"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item" onclick="rotateTo(1)">
+                    <div class="card-inner">
+                        <div class="cos-photo-wrapper">
+                            <img src="images/judy.jpg" alt="Cosplay Judy" class="cos-img">
+                            <div class="cos-label">FILE: JUDY_01</div>
+                            <div class="scanline"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="carousel-item" onclick="rotateTo(2)">
+                    <div class="card-inner">
+                        <div class="cos-photo-wrapper">
+                            <img src="images/misaki.jpg" alt="Cosplay Misaki" class="cos-img">
+                            <div class="cos-label">FILE: MISAKI_01</div>
+                            <div class="scanline"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="carousel-item" onclick="rotateTo(3)">
+                    <div class="card-inner">
+                        <div class="cos-photo-wrapper">
+                            <img src="images/miwako.png" alt="Cosplay Miwako" class="cos-img">
+                            <div class="cos-label">FILE: MIWAKO_01</div>
+                            <div class="scanline"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="carousel-item" onclick="rotateTo(4)">
+                    <div class="card-inner">
+                        <div class="cos-photo-wrapper">
+                            <img src="images/shuigu.jpg" alt="Cosplay Shizuku" class="cos-img">
+                            <div class="cos-label">FILE: SHIZUKU_01</div>
+                            <div class="scanline"></div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="carousel-item" onclick="rotateTo(5)">
+                    <div class="card-inner">
+                        <div class="cos-photo-wrapper">
+                            <img src="images/xielian.jpg" alt="Cosplay Xielian" class="cos-img">
+                            <div class="cos-label">FILE: XIELIAN_01</div>
+                            <div class="scanline"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item" onclick="rotateTo(6)">
+                    <div class="card-inner">
+                        <div class="cos-photo-wrapper">
+                            <img src="images/shenwei.jpg" alt="Cosplay Kamui" class="cos-img">
+                            <div class="cos-label">FILE: KAMUI_01</div>
+                            <div class="scanline"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item" onclick="rotateTo(7)">
+                    <div class="card-inner">
+                        <div class="cos-photo-wrapper">
+                            <img src="images/kyoko.jpg" alt="Cosplay Kyoko" class="cos-img">
+                            <div class="cos-label">FILE: Kyoko_01</div>
+                            <div class="scanline"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item" onclick="rotateTo(8)">
+                    <div class="card-inner">
+                        <div class="cos-photo-wrapper">
+                            <img src="images/yuri.jpg" alt="Cosplay Yuri" class="cos-img">
+                            <div class="cos-label">FILE: YURI_01</div>
+                            <div class="scanline"></div>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+        </div>
+        <p class="cos-hint">
+            <span lang="zh">
+                MIKU TIP: 点击侧边露出的卡牌即可切换
+            </span>
+            <span lang="en">
+                MIKU TIP: CLICK SIDE PHOTOS TO ROTATE
+            </span>
+            
+        </p>
     </section>
     
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -168,7 +697,55 @@
             btnEn.classList.remove('active');
         }
     }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const musicBtn = document.getElementById('musicBtn');
+        const bgm = document.getElementById('bgm');
+        const statusText = document.querySelector('.status-text');
+
+        musicBtn.addEventListener('click', () => {
+            if (bgm.paused) {
+                bgm.play();
+                musicBtn.classList.add('playing');
+                statusText.innerText = 'STATUS: PLAYING';
+            } else {
+                bgm.pause();
+                musicBtn.classList.remove('playing');
+                statusText.innerText = 'STATUS: PAUSED';
+            }
+        });
+    });
 </script>
+
+
+<footer class="miku-footer">
+    <div class="footer-container">
+        <div class="footer-glitch-text" data-text="CONNECT_WITH_ME">CONNECT WITH ME</div>
+        
+        <div class="footer-socials">
+            <a href="https://github.com/kiiiiwiii" target="_blank" class="social-item">
+                <span class="social-icon">GH</span> GITHUB
+            </a>
+            <a href="https://www.linkedin.com/in/kiana-li-kiwikiwi/" target="_blank" class="social-item">
+                <span class="social-icon">IN</span> LINKEDIN
+            </a>
+            <a href="https://discord.com/users/ki.ki._." target="_blank" class="social-item">
+                <span class="social-icon">DC</span> DISCORD
+            </a>
+            <a href="mailto:kianali1208@gmail.com" target="_blank" class="social-item">
+                <span class="social-icon">EM</span> GMAIL
+            </a>
+        </div>
+
+        
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 KIANA LI // STATUS: ACTIVE // ID: 39C5BB</p>
+        </div>
+    </div>
+</footer>
+
+
 
 </body>
 </html>
