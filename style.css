@@ -1,5 +1,4 @@
 :root {
-    /* Dark Mode (默认) */
     --miku-green: #39C5BB;
     --miku-pink: #FF6699;
     --miku-black: #1A1A1A;
@@ -11,15 +10,14 @@
     --pixel-font: 'DotGothic16', sans-serif;
 }
 
-/* 自动侦测系统 Light Mode */
 @media (prefers-color-scheme: light) {
     :root {
-        --bg-dark: #f0f5f5;      /* 浅灰蓝色背景，比纯白更有质感 */
-        --text-main: #1a1a1a;    /* 深色文字 */
+        --bg-dark: #f0f5f5; 
+        --text-main: #1a1a1a; 
         --panel-bg: rgba(255, 255, 255, 0.9);
         --card-bg: rgba(57, 197, 187, 0.05);
-        --miku-black: #ffffff;   /* 亮色模式下的反转色 */
-        --nav-bg: #ffffff;       /* 导航栏变白 */
+        --miku-black: #ffffff; 
+        --nav-bg: #ffffff; 
     }
 }
 
@@ -78,7 +76,7 @@ body {
     text-align: center;
 }
 
-/* 游戏档案 9 格子布局 */
+
 .game-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -87,11 +85,11 @@ body {
 }
 
 
-/* 让文字在卡片中分布更均匀 */
+
 .game-item {
     display: flex;
     flex-direction: column;
-    min-height: 320px; /* 统一高度 */
+    min-height: 320px; 
     justify-content: flex-start;
 }
 
@@ -111,7 +109,7 @@ body {
     opacity: 0.9;
 }
 
-/* 适配移动端：在手机上显示为 1 列或 2 列 */
+
 @media (max-width: 900px) {
     .game-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -139,20 +137,20 @@ body {
     justify-content: center;
     font-size: 0.8rem;
     color: var(--miku-green);
-    overflow: hidden;  /* 溢出隐藏 */
-    position: relative; /* 为内部图片提供参考 */
+    overflow: hidden; 
+    position: relative; 
    
 }
 
 .game-img-todo img {
     width: 100%;
     height: 100%;
-    object-fit: cover;      /* 覆盖整个容器，可能会裁剪 */
-    object-position: center; /* 居中显示裁剪区域 */
+    object-fit: cover;
+    object-position: center; 
     display: block;
 }
 
-/* Cosplay 展示区 */
+
 .cosplay-placeholder {
     width: 100%;
     height: 500px;
@@ -172,13 +170,13 @@ body {
 }
 
 
-/* 时间线主轴 */
+
 .timeline-container {
     position: relative;
     max-width: 900px;
     margin: 50px auto;
     padding-left: 20px;
-    border-left: 4px dashed var(--miku-green); /* 像素风格虚线 */
+    border-left: 4px dashed var(--miku-green); 
 }
 
 .mission-entry {
@@ -187,7 +185,7 @@ body {
     padding-left: 40px;
 }
 
-/* 时间轴上的小圆点 */
+
 .mission-entry::before {
     content: "";
     position: absolute;
@@ -207,14 +205,14 @@ body {
     margin-bottom: 10px;
 }
 
-/* 任务内容块 - Q 弹感觉 */
+
 .mission-blob {
     display: flex;
     background: rgba(57, 197, 187, 0.05);
     border: 3px solid var(--miku-green);
     padding: 20px;
     gap: 20px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Q 弹过度 */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
 }
 
 .mission-blob:hover {
@@ -223,21 +221,21 @@ body {
     box-shadow: -10px 10px 0px var(--miku-pink);
 }
 
-/* 确保时间轴图片容器有明确的尺寸 */
+
 .mission-visual {
-    width: 100%;       /* 占满父容器宽度 */
-    height: 200px;     /* 必须给一个高度，或者设为 auto */
-    overflow: hidden;  /* 溢出隐藏 */
-    border: 1px solid var(--miku-green); /* 边框线，方便 Debug 确认位置 */
+    width: 100%; 
+    height: 200px;
+    overflow: hidden; 
+    border: 1px solid var(--miku-green);
     margin-bottom: 15px;
-    background: rgba(0, 0, 0, 0.3); /* 图片加载前的底色 */
+    background: rgba(0, 0, 0, 0.3); 
 }
 
-/* 确保图片自适应填充，不拉伸 */
+
 .mission-visual img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 关键：裁剪图片以填满 200px 高度，不留白也不变形 */
+    object-fit: cover; 
     display: block;
 }
 
@@ -246,7 +244,7 @@ body {
     color: var(--miku-green);
 }
 
-/* 像素 OPEN 按钮 */
+
 .pixel-btn {
     display: inline-block;
     padding: 10px 25px;
@@ -268,9 +266,9 @@ body {
     color: white;
 }
 
-/* 3D 舞台容器 */
+
 .carousel-container {
-    perspective: 2000px; /* 强透视感 */
+    perspective: 2000px; 
     width: 100%;
     height: 600px;
     display: flex;
@@ -279,16 +277,16 @@ body {
     overflow: visible;
 }
 
-/* 旋转器 */
+
 .carousel {
     width: 300px;
     height: 450px;
     position: relative;
     transform-style: preserve-3d;
-    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.15); /* Q弹感旋转 */
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.15); 
 }
 
-/* 每一张卡片 */
+
 .carousel-item {
     position: absolute;
     width: 300px;
@@ -299,7 +297,7 @@ body {
     border: 4px solid var(--miku-green);
     border-radius: 20px;
     cursor: pointer;
-    backface-visibility: hidden; /* 旋转到背面时隐藏，避免重叠 */
+    backface-visibility: hidden; 
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
@@ -317,15 +315,13 @@ body {
     font-family: var(--pixel-font);
 }
 
-/* 高亮效果 */
+
 .carousel-item.active {
     border-color: var(--miku-pink);
     box-shadow: 0 0 40px var(--miku-pink);
 }
 
-/* HERE */
 
-/* 切换键样式 */
 .lang-switch {
     display: inline-flex;
     margin-left: 30px;
@@ -336,11 +332,11 @@ body {
 
 .lang-switch span {
     transition: color 0.3s;
-    color: rgba(26, 26, 26, 0.5); /* 未选中时半透明黑色 */
+    color: rgba(26, 26, 26, 0.5); 
 }
 
 .lang-switch .active {
-    color: var(--miku-pink) !important; /* 选中时变粉色  */
+    color: var(--miku-pink) !important; 
     text-shadow: 0 0 10px var(--miku-pink);
 }
 
@@ -349,15 +345,12 @@ body {
     cursor: default;
 }
 
-/* --- 核心语言切换逻辑 --- */
 
-/* 1. 默认状态：隐藏所有带有 lang="zh" 的元素，显示 lang="en" */
 [lang="zh"] {
     display: none;
 }
 
 
-/* 2. 当 body 带有 .lang-zh 类时（切换到中文）：隐藏英文，显示中文 */
 body.lang-zh [lang="en"] {
     display: none;
 }
@@ -367,7 +360,6 @@ body.lang-zh [lang="zh"] {
 }
 
 
-/* Hero 布局优化 */
 .hero-container {
     display: flex;
     align-items: center;
@@ -437,7 +429,7 @@ body.lang-zh [lang="zh"] {
     filter: drop-shadow(0 0 15px var(--miku-green));
 }
 
-/* 响应式调整 */
+
 @media (max-width: 768px) {
     .hero-container {
         flex-direction: column-reverse;
@@ -450,28 +442,27 @@ body.lang-zh [lang="zh"] {
 }
 
 
-/* 图片在旋转卡片中的容器 */
+
 .cos-photo-wrapper {
     width: 100%;
     height: 100%;
     position: relative;
     overflow: hidden;
-    border-radius: 15px; /* 匹配外层卡片的圆角 */
+    border-radius: 15px; 
 }
 
 .cos-img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 核心：确保图片铺满 300x450 的空间而不拉伸 */
+    object-fit: cover; 
     transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* 悬停时的小动效 */
 .carousel-item:hover .cos-img {
     transform: scale(1.1);
 }
 
-/* 图片下方的像素标签 */
+
 .cos-label {
     position: absolute;
     bottom: 0;
@@ -487,7 +478,7 @@ body.lang-zh [lang="zh"] {
     clip-path: polygon(0 20%, 100% 0, 100% 100%, 0 100%);
 }
 
-/* 覆盖原有的 .card-inner 默认样式，让图片填满容器 */
+
 .carousel-item .card-inner {
     border: none;
     padding: 0;
@@ -496,7 +487,7 @@ body.lang-zh [lang="zh"] {
     background: transparent;
 }
 
-/* 额外的科技感：扫描线动画 */
+
 .scanline {
     position: absolute;
     top: 0;
@@ -515,7 +506,7 @@ body.lang-zh [lang="zh"] {
     100% { top: 100%; }
 }
 
-/* --- Miku Style Footer --- */
+
 .miku-footer {
     background: var(--bg-dark);
     padding: 80px 0 40px;
@@ -527,7 +518,7 @@ body.lang-zh [lang="zh"] {
     overflow: hidden;
 }
 
-/* 装饰性背景：扫描线效果 */
+
 .miku-footer::before {
     content: "";
     position: absolute;
@@ -619,7 +610,7 @@ body.lang-zh [lang="zh"] {
     letter-spacing: 1px;
 }
 
-/* 适配移动端 */
+
 @media (max-width: 600px) {
     .social-item {
         width: 80%;
@@ -630,7 +621,7 @@ body.lang-zh [lang="zh"] {
     }
 }
 
-/* 播放器整体布局 */
+
 .music-player-container {
     display: flex;
     flex-direction: column;
@@ -639,7 +630,7 @@ body.lang-zh [lang="zh"] {
     font-family: var(--pixel-font);
 }
 
-/* 唱盘外层包装 */
+
 .disc-wrapper {
     position: relative;
     width: 200px;
@@ -648,7 +639,7 @@ body.lang-zh [lang="zh"] {
     perspective: 1000px;
 }
 
-/* 唱盘主体：黑色唱片质感 */
+
 .vinyl-disc {
     width: 100%;
     height: 100%;
@@ -658,12 +649,11 @@ body.lang-zh [lang="zh"] {
     position: relative;
     box-shadow: 0 0 20px rgba(0,0,0,0.5), 0 0 5px var(--miku-green);
     transition: transform 0.5s ease;
-    /* 默认停止旋转 */
     animation: rotateDisc 5s linear infinite;
     animation-play-state: paused;
 }
 
-/* 唱盘封面图 */
+
 .disc-cover-art {
     position: absolute;
     top: 25%; left: 25%;
@@ -678,7 +668,7 @@ body.lang-zh [lang="zh"] {
     object-fit: cover;
 }
 
-/* 唱盘中间的小孔 */
+
 .disc-center-hole {
     position: absolute;
     top: 45%; left: 45%;
@@ -689,19 +679,19 @@ body.lang-zh [lang="zh"] {
     border: 2px solid #555;
 }
 
-/* 旋转动画 */
+
 @keyframes rotateDisc {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
 
-/* 当激活播放时 */
+
 .disc-wrapper.playing .vinyl-disc {
     animation-play-state: running;
     box-shadow: 0 0 30px var(--miku-green);
 }
 
-/* 状态文字 */
+
 .player-info {
     margin-top: 20px;
     text-align: center;
@@ -720,7 +710,7 @@ body.lang-zh [lang="zh"] {
 }
 
 
-/* ===== hero内教育样式 ===== */
+
 .hero-education {
     margin: 30px 0 25px;
     padding: 20px;
@@ -816,7 +806,7 @@ body.lang-zh [lang="zh"] {
     margin-top: 10px;
 }
 
-/* ===== 独立教育面板样式 ===== */
+
 .edu-showcase {
     display: grid;
     grid-template-columns: 1fr 1fr;
