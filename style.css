@@ -130,8 +130,8 @@ body {
 }
 
 .game-img-todo {
-    height: 300px;
-    width: 400px;
+    height: 250px;
+    width: 350px;
     background: #000;
     border: 1px dashed var(--miku-green);
     display: flex;
