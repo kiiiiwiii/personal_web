@@ -130,8 +130,8 @@ body {
 }
 
 .game-img-todo {
-    height: 200px;
-    width: 300px;
+    height: 300px;
+    width: 400px;
     background: #000;
     border: 1px dashed var(--miku-green);
     display: flex;
@@ -397,7 +397,8 @@ body.lang-en [lang="en"] {
 }
 
 .intro-bio {
-    font-family: var(--pixel-font);
+    /*
+    font-family: var(--pixel-font);*/
     line-height: 1.6;
     font-size: 1.1rem;
     margin: 20px 0;
@@ -518,7 +519,7 @@ body.lang-en [lang="en"] {
     border-top: 4px solid var(--miku-green);
     position: relative;
     color: var(--text-main);
-    font-family: var(--pixel-font);
+    /*font-family: var(--pixel-font);*/
     text-align: center;
     overflow: hidden;
 }
@@ -750,7 +751,7 @@ body.lang-en [lang="en"] {
 
 .edu-year {
     color: var(--miku-pink);
-    font-family: var(--pixel-font);
+    /*font-family: var(--pixel-font);*/
     padding: 5px 12px;
     border: 2.5px dashed var(--miku-pink);
     font-size: 1.2rem;
@@ -795,7 +796,7 @@ body.lang-en [lang="en"] {
     color: var(--miku-green);
     padding: 3px 10px;
     font-size: 1.2rem;
-    font-family: var(--pixel-font);
+    /*font-family: var(--pixel-font);*/
 }
 
 .more-skills {
@@ -805,7 +806,7 @@ body.lang-en [lang="en"] {
 .more-skills summary {
     color: var(--miku-pink);
     cursor: pointer;
-    font-size: 0.8rem;
+    font-size: 1.0rem;
 }
 
 .expanded {
