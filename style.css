@@ -349,18 +349,21 @@ body {
     cursor: default;
 }
 
-/* 核心逻辑：默认隐藏英文 */
-[lang="en"] {
+/* --- 核心语言切换逻辑 --- */
+
+/* 1. 默认状态：隐藏所有带有 lang="zh" 的元素，显示 lang="en" */
+[lang="zh"] {
     display: none;
 }
 
-/* 当 body 带有 .lang-en 类时，隐藏中文，显示英文 */
-body.lang-en [lang="zh"] {
+
+/* 2. 当 body 带有 .lang-zh 类时（切换到中文）：隐藏英文，显示中文 */
+body.lang-zh [lang="en"] {
     display: none;
 }
 
-body.lang-en [lang="en"] {
-    display: inline-block; /* 块级元素根据需要设为 block */
+body.lang-zh [lang="zh"] {
+    display: inline-block;
 }
 
 

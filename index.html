@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,9 +19,9 @@
             <a href="#games">GAMES</a>
             <a href="#cosplay">INTERESTS</a>
             <div class="lang-switch">
-                <span id="lang-zh" class="active" onclick="setLanguage('zh')">中</span>
+                <span id="lang-en" class="active" onclick="setLanguage('en')">ENG</span>
                 <span class="separator">/</span>
-                <span id="lang-en" onclick="setLanguage('en')">ENG</span>
+                <span id="lang-zh" onclick="setLanguage('zh')">中</span>
             </div>
         </nav>
     </header>
@@ -685,14 +685,16 @@
         const btnZh = document.getElementById('lang-zh');
         const btnEn = document.getElementById('lang-en');
 
-        if (lang === 'en') {
-            body.classList.add('lang-en');
-            btnEn.classList.add('active');
-            btnZh.classList.remove('active');
-        } else {
-            body.classList.remove('lang-en');
+       if (lang === 'zh') {
+            // 切换到中文
+            body.classList.add('lang-zh');
             btnZh.classList.add('active');
             btnEn.classList.remove('active');
+        } else {
+            // 切换到英文（默认状态）
+            body.classList.remove('lang-zh');
+            btnEn.classList.add('active');
+            btnZh.classList.remove('active');
         }
     }
 
