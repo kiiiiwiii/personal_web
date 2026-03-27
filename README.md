@@ -10,8 +10,7 @@ I’m currently an undergraduate student majoring in Mathematics at the Universi
 
 ## 🚀 Live Website
 
-👉 https://your-domain.com
-*(replace with your actual domain)*
+👉 https://kianali.com/
 
 ---
 
