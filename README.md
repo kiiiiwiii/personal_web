@@ -1,52 +1,37 @@
 # 🌐 Kiana's Personal Portfolio
 
-## 👋 About
+## About
 
 This is my personal portfolio website, showcasing my work and interests in **game development**, **gameplay programming**, and **computer graphics**.
 
 I’m currently an undergraduate student majoring in Mathematics at the University of British Columbia, with a focus on building **interactive systems** and **visually engaging experiences**.
 
----
 
-## 🚀 Live Website
+
+## Live Website
 
 👉 https://kianali.com/
 
----
 
-## 🧩 What’s Inside
+## What’s Inside
 
-* 🎮 Game development projects (Unity / C++)
-* 🎨 Computer graphics & rendering work
-* 🧠 Gameplay systems and technical implementations
-* 📜 Experience and education
+* Experience and education
+* Game development projects (Unity / C++)
+* My life
 
----
-
-## 🛠️ Tech Stack
-
-* **Frontend:** HTML, CSS, JavaScript
-* **Graphics:** Three.js, GLSL, OpenGL
-* **Game Dev:** Unity, C++
-
----
-
-## 📌 Features
+## Features
 
 * Responsive design (desktop & mobile)
 * Interactive UI with game-inspired aesthetics
 * Language toggle (English / 中文)
 * Custom visual style inspired by game interfaces
 
----
 
 ## ⚠️ Usage
 
 This repository is intended for **portfolio purposes only**.
 
 * Please do not copy, reproduce, or redistribute the design or content without permission.
-
----
 
 ## 📫 Contact
 
