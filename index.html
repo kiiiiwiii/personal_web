@@ -268,6 +268,7 @@
                                             Implemented a physics-based player movement model using mouse-aimed vectors to balance 
                                             precise control with realistic inertia. Developed an automated enemy tracking system 
                                             using NavMesh and integrated particle systems for the flamethrower mechanics. 
+                                            using NavMesh and integrated particle systems for the flamethrower mechanics. 
                                             Collaborated on balancing player health and enemy wave scaling.
                                         </li>
                                         
@@ -662,7 +663,7 @@
     <script>
         AOS.init({
             duration: 800,
-            easing: 'ease-out-back', // Q 弹效果的核心：回弹缓冲
+            easing: 'ease-out-back',
         });
     </script>
 
@@ -671,11 +672,9 @@
     const carousel = document.getElementById('mikuCarousel');
     const items = document.querySelectorAll('.carousel-item');
     const totalItems = items.length;
-    const theta = 360 / totalItems; // 每张卡片间隔 40 度
-    // 这里的 450 是根据卡片宽度手动微调的半径，确保前三张能看清
+    const theta = 360 / totalItems; 
     const radius = 500; 
 
-    // 初始化：将 9 张卡片沿着圆环排列
     items.forEach((item, i) => {
         item.style.transform = `rotateY(${i * theta}deg) translateZ(${radius}px)`;
     });
@@ -698,7 +697,7 @@
         });
     }
 
-    // 默认展示第一张
+
     rotateTo(0);
 
     function setLanguage(lang) {
@@ -761,7 +760,7 @@
         
 
         <div class="footer-bottom">
-            <p>&copy; 2026 KIANA LI // STATUS: ACTIVE // ID: 39C5BB</p>
+            <p>&copy; 2026 KIANA LI // STATUS: ACTIVE </p>
         </div>
     </div>
 </footer>

@@ -79,6 +79,7 @@ body {
 }
 
 
+
 .game-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -88,9 +89,11 @@ body {
 
 
 
+
 .game-item {
     display: flex;
     flex-direction: column;
+    min-height: 320px; 
     min-height: 320px; 
     justify-content: flex-start;
 }
@@ -110,6 +113,7 @@ body {
     line-height: 1.4;
     opacity: 0.9;
 }
+
 
 
 @media (max-width: 900px) {
@@ -153,6 +157,7 @@ body {
 }
 
 
+
 .cosplay-placeholder {
     width: 100%;
     height: 500px;
@@ -173,11 +178,13 @@ body {
 
 
 
+
 .timeline-container {
     position: relative;
     max-width: 900px;
     margin: 50px auto;
     padding-left: 20px;
+    border-left: 4px dashed var(--miku-green); 
     border-left: 4px dashed var(--miku-green); 
 }
 
@@ -186,6 +193,7 @@ body {
     margin-bottom: 80px;
     padding-left: 40px;
 }
+
 
 
 .mission-entry::before {
@@ -208,13 +216,14 @@ body {
 }
 
 
+
 .mission-blob {
     display: flex;
     background: rgba(57, 197, 187, 0.05);
     border: 3px solid var(--miku-green);
     padding: 20px;
     gap: 20px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Q 弹过度 */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
 }
 
 .mission-blob:hover {
@@ -224,6 +233,7 @@ body {
 }
 
 
+
 .mission-visual {
     width: 100%; 
     height: 200px;  
@@ -231,12 +241,15 @@ body {
     border: 1px solid var(--miku-green); 
     margin-bottom: 15px;
     background: rgba(0, 0, 0, 0.3); 
+    background: rgba(0, 0, 0, 0.3); 
 }
+
 
 
 .mission-visual img {
     width: 100%;
     height: 100%;
+    object-fit: cover; 
     object-fit: cover; 
     display: block;
 }
@@ -245,6 +258,7 @@ body {
     margin-top: 0;
     color: var(--miku-green);
 }
+
 
 
 .pixel-btn {
@@ -269,7 +283,9 @@ body {
 }
 
 
+
 .carousel-container {
+    perspective: 2000px; 
     perspective: 2000px; 
     width: 100%;
     height: 600px;
@@ -280,13 +296,16 @@ body {
 }
 
 
+
 .carousel {
     width: 300px;
     height: 450px;
     position: relative;
     transform-style: preserve-3d;
     transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.15); 
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.15); 
 }
+
 
 
 .carousel-item {
@@ -299,6 +318,7 @@ body {
     border: 4px solid var(--miku-green);
     border-radius: 20px;
     cursor: pointer;
+    backface-visibility: hidden; 
     backface-visibility: hidden; 
     transition: all 0.3s ease;
     display: flex;
@@ -318,6 +338,7 @@ body {
 }
 
 
+
 .carousel-item.active {
     border-color: var(--miku-pink);
     box-shadow: 0 0 40px var(--miku-pink);
@@ -334,9 +355,11 @@ body {
 .lang-switch span {
     transition: color 0.3s;
     color: rgba(26, 26, 26, 0.5); 
+    color: rgba(26, 26, 26, 0.5); 
 }
 
 .lang-switch .active {
+    color: var(--miku-pink) !important; 
     color: var(--miku-pink) !important; 
     text-shadow: 0 0 10px var(--miku-pink);
 }
@@ -432,6 +455,7 @@ body.lang-zh [lang="zh"] {
 }
 
 
+
 @media (max-width: 768px) {
     .hero-container {
         flex-direction: column-reverse;
@@ -445,11 +469,13 @@ body.lang-zh [lang="zh"] {
 
 
 
+
 .cos-photo-wrapper {
     width: 100%;
     height: 100%;
     position: relative;
     overflow: hidden;
+    border-radius: 15px; 
     border-radius: 15px; 
 }
 
@@ -481,6 +507,7 @@ body.lang-zh [lang="zh"] {
 }
 
 
+
 .carousel-item .card-inner {
     border: none;
     padding: 0;
@@ -488,6 +515,7 @@ body.lang-zh [lang="zh"] {
     height: 100%;
     background: transparent;
 }
+
 
 
 .scanline {
@@ -509,6 +537,7 @@ body.lang-zh [lang="zh"] {
 }
 
 
+
 .miku-footer {
     background: var(--bg-dark);
     padding: 80px 0 40px;
@@ -519,6 +548,7 @@ body.lang-zh [lang="zh"] {
     text-align: center;
     overflow: hidden;
 }
+
 
 
 .miku-footer::before {
@@ -613,6 +643,7 @@ body.lang-zh [lang="zh"] {
 }
 
 
+
 @media (max-width: 600px) {
     .social-item {
         width: 80%;
@@ -624,6 +655,7 @@ body.lang-zh [lang="zh"] {
 }
 
 
+
 .music-player-container {
     display: flex;
     flex-direction: column;
@@ -633,6 +665,7 @@ body.lang-zh [lang="zh"] {
 }
 
 
+
 .disc-wrapper {
     position: relative;
     width: 200px;
@@ -640,6 +673,7 @@ body.lang-zh [lang="zh"] {
     cursor: pointer;
     perspective: 1000px;
 }
+
 
 
 .vinyl-disc {
@@ -657,6 +691,7 @@ body.lang-zh [lang="zh"] {
 }
 
 
+
 .disc-cover-art {
     position: absolute;
     top: 25%; left: 25%;
@@ -672,6 +707,7 @@ body.lang-zh [lang="zh"] {
 }
 
 
+
 .disc-center-hole {
     position: absolute;
     top: 45%; left: 45%;
@@ -683,16 +719,19 @@ body.lang-zh [lang="zh"] {
 }
 
 
+
 @keyframes rotateDisc {
     from { transform: rotate(0deg); }
     to { transform: rotate(360deg); }
 }
 
 
+
 .disc-wrapper.playing .vinyl-disc {
     animation-play-state: running;
     box-shadow: 0 0 30px var(--miku-green);
 }
+
 
 
 .player-info {
