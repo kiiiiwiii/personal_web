@@ -126,7 +126,7 @@
                     <span class="edu-badge"></span>
                     <div class="edu-detail">
                         <p lang="zh">
-                            <strong>英属哥伦比亚大学</strong>
+                            <strong>不列颠哥伦比亚大学</strong>
                             <span>数学本科 · GPA 3.75/4.33</span>
                         </p>
                         <p lang="en">
@@ -209,6 +209,42 @@
         </h2>
 
         <div class="timeline-container">
+            <div class="mission-entry" data-aos="fade-left">
+                <div class="timeline-date">
+                    <span lang="zh">2026.01 – 2026.04</span>
+                    <span lang="en">JAN–APR 2026</span>
+                </div>
+                <div class="mission-blob">
+                    <div class="mission-info">
+                        <h3>
+                            <span lang="zh">游戏开发 –《Kung Food》</span>
+                            <span lang="en">GAME_PROJECT: KUNG FOOD</span>
+                        </h3>
+                        <p>
+                            <p>
+                                <span lang="zh">项目简介：使用 C++ / OpenGL / GLSL 开发的 2D 俯视角 Roguelite 游戏，历经 4 个 Milestone 迭代，最终交付支持至少 10 分钟非重复游玩的完整版本。</span>
+                                <span lang="en">developed a 2D top-down roguelite game built with C++/OpenGL/GLSL across 4 milestone iterations, delivering a complete version supporting at least 10 minutes of non-repetitive gameplay.</span>
+                            </p>
+                            <span lang="zh">
+                                <ul>
+                                    <li>主导设计并实现程序化地图生成系统：采用 Marching Squares 风格的布置规则表结合随机化障碍物，配合基于网格的占用检测与寻路兼容性校验，确保每局地图可通行且不重复，解决了原始固定地图重复感强的问题。</li>
+                                    <li>独立实现物品收集与背包系统（含 5 项子功能）：包括敌人死亡掉落食材、背包 UI 与动画、鼠标左键拾取、按键开关背包（G 键）、及回收食材，打通了游戏核心的战斗 → 收集 → 烹饪闭环的关键环节。</li>
+                                    <li>参与全项目性能优化：最终版本在 50+ 实体高负载场景下帧率从 25–35 FPS 提升至 50–60 FPS，帧时间由 25–30ms 降至 16–18ms。</li>
+                                </ul>
+                            </span>
+                            <span lang="en">
+                                <ul>
+                                    <li>Led the design and implementation of a procedural map generation system using Marching Squares-style placement rule tables with randomized obstacles, grid-based occupancy detection, and pathfinding compatibility validation — ensuring every map is traversable and unique, eliminating the repetitiveness of the original fixed maps.</li>
+                                    <li>Independently implemented an item collection and inventory system (5 sub-features): enemy death ingredient drops, inventory UI and animations, left-click pickup, keyboard toggle (G key), and ingredient recycling — completing the critical combat → collection → cooking gameplay loop.</li>
+                                    <li>Participated in full project performance optimization: in high-load scenarios with 50+ entities, FPS improved from 25–35 to 50–60, and frame time dropped from 25–30ms to 16–18ms.</li>
+                                </ul>
+                            </span>
+                        </p>
+                        <button class="pixel-btn" onclick="openVideoModal()">WATCH DEMO</button>
+                    </div>
+                </div>
+            </div>
+
             <div class="mission-entry" data-aos="fade-right">
                 <div class="timeline-date">JUL 2025</div>
                 <div class="mission-blob">
@@ -223,8 +259,8 @@
                         <p>
                             <p>
                                 <span lang="zh">
-                                    项目简介：出于对游戏开发的兴趣,与队友在课外时间报名参与Game Jam, 
-                                    并基于 2025届 “能量” 的主题，使用 Unity , C# 开发了一款游戏。
+                                    项目简介: 在48小时 Game Jam 中，基于 2025届 “Energy” 的主题，使用 Unity / C# 从零打造了一款让玩家作为 “打工人” 驾驶太阳能喷火船，
+                                    一边躲避环保组织的拼命阻击，一边为公司疯狂融化冰山得到报酬的游戏
                                 </span>
 
                                 <span lang="en">A 48-hour Game Jam project based on 2025 theme "Energy".</span>
@@ -232,20 +268,15 @@
 
                                 <span lang="zh">
                                     <ul>
+
                                         <li>
-                                            在 48 小时的 Game Jam 中，我们以讽刺资本逐利为核心设计理念，从零打造了一款让玩家作为 “打工人” 驾
-                                            驶太阳能喷火船，一边躲避环保组织的拼命阻击，一边为公司疯狂融化冰山得到报酬的游戏。
+                                            在实现玩家移动与攻击系统：通过计算鼠标指向向量，实现基于物理动量的飞船移动模型，
+                                            使操控既可控又具惯性手感；结合粒子系统构建火焰喷射攻击系统。
                                         </li>
 
                                         <li>
-                                            在团队中，我负责玩家移动系统、敌人生成、战斗交互与碰撞检测等关键功能的实现，确保游戏的可玩性。
-                                        </li>
-
-                                        <li>
-                                            
-                                            通过计算鼠标指向向量等，实现基于物理动量的玩家移动模型，使飞船的移动既可控又具惯性特征。结合粒子
-                                            系统等, 构成玩家的火焰喷射攻击系统。基于 NavMesh 的自动寻路、目标追踪,建立敌人生成与追踪系统。
-                                            参与玩家生命值、敌人波次控制等参数的设计。
+                                            实现敌人AI与波次系统: 基于 NavMesh 实现敌人自动寻路与目标追踪，建立波次生成系统；
+                                            同时参与玩家生命值与敌人波次参数调优，保障核心战斗手感。
                                         </li>
                                         
                                     </ul>
@@ -684,10 +715,8 @@
     function rotateTo(index) {
         currIndex = index;
         const angle = currIndex * -theta;
-        // 将整个容器反向旋转，并稍微向后退一点点，保证视觉平衡
         carousel.style.transform = `translateZ(-${radius}px) rotateY(${angle}deg)`;
         
-        // 更新高亮状态
         items.forEach((item, i) => {
             if(i === index) {
                 item.classList.add('active');
@@ -715,6 +744,16 @@
             body.classList.remove('lang-zh');
             btnEn.classList.add('active');
             btnZh.classList.remove('active');
+        }
+    }
+
+    function openVideoModal() {
+        document.getElementById('video-modal').classList.add('active');
+    }
+    function closeVideoModal(e) {
+        if (e.target === document.getElementById('video-modal')) {
+            e.currentTarget.classList.remove('active');
+            document.getElementById('demo-video').pause();
         }
     }
 
@@ -766,6 +805,16 @@
 </footer>
 
 
+
+<!-- Video Modal -->
+<div id="video-modal" class="video-modal-overlay" onclick="closeVideoModal(event)">
+  <div class="video-modal-content">
+    <button class="video-modal-close" onclick="document.getElementById('video-modal').classList.remove('active'); document.getElementById('demo-video').pause()">✕</button>
+    <video id="demo-video" controls>
+      <source src="videos/kung_food_demo.mp4" type="video/mp4">
+    </video>
+  </div>
+</div>
 
 </body>
 </html>

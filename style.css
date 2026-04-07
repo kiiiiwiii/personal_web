@@ -956,3 +956,37 @@ body.lang-zh [lang="zh"] {
         grid-template-columns: 1fr;
     }
 }
+
+/* Video Modal */
+.video-modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+.video-modal-overlay.active {
+    display: flex;
+}
+.video-modal-content {
+    position: relative;
+    max-width: 860px;
+    width: 90%;
+}
+.video-modal-content video {
+    width: 100%;
+    border: 2px solid var(--neon-pink, #ff69b4);
+    display: block;
+}
+.video-modal-close {
+    position: absolute;
+    top: -2rem;
+    right: 0;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
