@@ -1,7 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(powershell.exe -Command \"Get-ChildItem 'D:\\\\personal_web' | Select-Object Name\")"
-    ]
-  }
-}
